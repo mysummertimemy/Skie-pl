@@ -1,0 +1,29 @@
+
+IF
+Global("L#2SkiEddardQuest","GLOBAL",2)
+Global("L#2SkieEddardQSpawn","L#SD02",0)
+THEN
+RESPONSE #100
+CreateCreature("L#2SDEDQ",[461.209],0)
+SetGlobal("L#2SkieEddardQSpawn","L#SD02",1)
+END
+
+IF
+InParty("L#2SDSkie")
+Dead("L#2SDEDQ")
+Global("L#2SkiEddardQuest","GLOBAL",3)
+THEN
+RESPONSE #100
+SetGlobal("L#2SkiEddardQuest","GLOBAL",4)
+ActionOverride("L#2SDSkie",StartDialogueNoSet(Player1))
+END
+
+IF
+InParty("L#2SDSkie")
+PartyHasItem("L#2EDDNO")
+Global("L#2SkiEddardQuest","GLOBAL",5)
+THEN
+RESPONSE #100
+SetGlobal("L#2SkiEddardQuest","GLOBAL",6)
+ActionOverride("L#2SDSkie",StartDialogueNoSet(Player1))
+END

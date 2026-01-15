@@ -1,0 +1,19 @@
+//IMOEN - DAGGER WAS FOUND
+
+IF
+PartyHasItem("L#2SDA1")
+InParty(Myself)
+Global("L#2SkieDaggerImoen","GLOBAL",0)
+CombatCounter(0)
+THEN
+RESPONSE #100
+SetGlobal("L#2SkieDaggerImoen","GLOBAL",1)
+END
+
+IF
+Global("L#2SkieDaggerImoen","GLOBAL",1)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+StartDialogOverride("IMOENJ",Player1)
+END

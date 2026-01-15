@@ -1,0 +1,7 @@
+IF
+Global("SkieSummoned","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("SkieSummoned","GLOBAL",100)
+Continue()
+END

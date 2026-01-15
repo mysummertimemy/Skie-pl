@@ -1,0 +1,73 @@
+IF
+InParty(Myself)
+CombatCounter(0)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!AreaType(DUNGEON)
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+RealGlobalTimerExpired("L#2EddardFriendTalkTime","GLOBAL")
+Global("L#2EddardFriendshipActive","GLOBAL",1)
+Global("L#2EddardFriendTalk","GLOBAL",7)
+THEN
+RESPONSE #100
+IncrementGlobal("L#2EddardFriendTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!AreaType(DUNGEON)
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+RealGlobalTimerExpired("L#2EddardRomTalkTime","GLOBAL")
+OR(2)
+ Global("L#2EddardRomanceActive","GLOBAL",1)
+ Global("L#2EddardRomanceActive","GLOBAL",2)
+Global("L#2EddardRomTalk","GLOBAL",7)
+THEN
+RESPONSE #100
+IncrementGlobal("L#2EddardRomTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!AreaType(DUNGEON)
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+RealGlobalTimerExpired("L#2EddardRomTalkTime","GLOBAL")
+OR(2)
+ Global("L#2EddardRomanceActive","GLOBAL",1)
+ Global("L#2EddardRomanceActive","GLOBAL",2)
+Global("L#2EddardRomTalk","GLOBAL",16)
+THEN
+RESPONSE #100
+IncrementGlobal("L#2EddardRomTalk","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!AreaType(DUNGEON)
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+RealGlobalTimerExpired("L#2EddardRomTalkTime","GLOBAL")
+OR(2)
+ Global("L#2EddardRomanceActive","GLOBAL",1)
+ Global("L#2EddardRomanceActive","GLOBAL",2)
+Global("L#2EddardRomTalk","GLOBAL",31)
+THEN
+RESPONSE #100
+IncrementGlobal("L#2EddardRomTalk","GLOBAL",1)
+END

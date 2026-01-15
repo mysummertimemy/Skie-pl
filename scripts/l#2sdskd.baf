@@ -1,0 +1,15 @@
+IF
+InParty(Myself)
+CombatCounter(0)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!StateCheck("L#2SDSkie",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("L#2SDSkieTalks","GLOBAL",16)
+RealGlobalTimerExpired("L#2SDSkieTimer","GLOBAL")
+Global("L#2SDSkieFriendshipActive","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("L#2SDSkieTalks","GLOBAL",17)
+END

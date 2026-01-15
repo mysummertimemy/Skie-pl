@@ -1,0 +1,8 @@
+IF
+  Global("L#SDCreateMainItem","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("L#SDCreateMainItem","GLOBAL",1)
+    ActionOverride("Picture1",CreateItem("l#2sda1",0,0,0))
+    Continue()
+END

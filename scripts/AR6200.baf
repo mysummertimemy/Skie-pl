@@ -1,0 +1,25 @@
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2SDBIO","GLOBAL",0)
+   InParty("L#2SDSkie")
+   Alignment("L#2SDSkie",CHAOTIC_GOOD)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2SDBIO","GLOBAL",1)
+      TextScreen("L#2SDEp1")
+      SmallWait(1)
+      Continue()
+END
+
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2SDBIO","GLOBAL",0)
+   InParty("L#2SDSkie")
+   !Alignment("L#2SDSkie",CHAOTIC_GOOD)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2SDBIO","GLOBAL",1)
+      TextScreen("L#2SDEp2")
+      SmallWait(1)
+      Continue()
+END

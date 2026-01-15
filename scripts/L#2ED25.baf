@@ -1,0 +1,425 @@
+//Friendship 1
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+!AreaCheck("AR4000")
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("L#2EDThroneFTalk1","GLOBAL",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("L#2EDThroneFTalk1T","GLOBAL",600)
+SetGlobal("L#2EDThroneFTalk1","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+!AreaCheck("AR4000")
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("L#2EDThroneFTalk1","GLOBAL",1)
+RealGlobalTimerExpired("L#2EDThroneFTalk1T","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("L#2EDThroneFTalk1","GLOBAL",2)
+END
+
+IF
+Global("L#2EDThroneFTalk1","GLOBAL",2)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+StartDialogue("L#2ED25J",Player1)
+END
+
+//Friendship 2
+//it's the dog encounter, so nothing here
+
+//Friendship 3
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+AreaCheck("AR5200")
+Range("Tran5201",29)
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("L#2EDThroneFTalk3","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("L#2EDThroneFTalk3","GLOBAL",1)
+END
+
+IF
+Global("L#2EDThroneFTalk3","GLOBAL",1)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+StartDialogue("L#2ED25J",Player1)
+END
+
+//4
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+Global("SaradushSacked","GLOBAL",1)
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("L#2EDThroneFTalk4","GLOBAL",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("L#2EddardSaradushSackedT","GLOBAL",14)
+SetGlobal("L#2EDThroneFTalk4","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+Global("SaradushSacked","GLOBAL",1)
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("L#2EDThroneFTalk4","GLOBAL",1)
+RealGlobalTimerExpired("L#2EddardSaradushSackedT","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("L#2EDThroneFTalk4","GLOBAL",2)
+END
+
+IF
+Global("L#2EDThroneFTalk4","GLOBAL",2)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+StartDialogue("L#2ED25J",Player1)
+END
+
+//5
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+AreaCheck("AR5500")
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("L#2EDThroneFTalk5","GLOBAL",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("L#2EddardAmkT","GLOBAL",60)
+SetGlobal("L#2EDThroneFTalk5","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+AreaCheck("AR5500")
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("L#2EDThroneFTalk5","GLOBAL",1)
+RealGlobalTimerExpired("L#2EddardAmkT","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("L#2EDThroneFTalk5","GLOBAL",2)
+END
+
+IF
+Global("L#2EDThroneFTalk5","GLOBAL",2)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+StartDialogue("L#2ED25J",Player1)
+END
+
+//DOG 1
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+OR(2)
+ PartyHasItem("L#2EDDOG")
+ Global("L#2EddardHasADog","GLOBAL",1)
+Global("L#2EddardDogTalk1","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobalTimer("L#2EddardDogTime","GLOBAL",FIVE_DAYS)
+SetGlobal("L#2EddardDogTalk1","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+OR(2)
+ PartyHasItem("L#2EDDOG")
+ Global("L#2EddardHasADog","GLOBAL",1)
+Global("L#2EddardDogTalk1","GLOBAL",1)
+GlobalTimerExpired("L#2EddardDogTime","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("L#2EddardDogTalk1","GLOBAL",2)
+END
+
+IF
+Global("L#2EddardDogTalk1","GLOBAL",2)
+THEN
+RESPONSE #100
+StartDialogue("L#2ED25J",Player1)
+END
+
+//DOG 2
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+OR(2)
+ PartyHasItem("L#2EDDOG")
+ Global("L#2EddardHasADog","GLOBAL",1)
+Global("L#2EddardDogTalk1","GLOBAL",3)
+THEN
+RESPONSE #100
+SetGlobalTimer("L#2EddardDogTime","GLOBAL",SEVEN_DAYS)
+SetGlobal("L#2EddardDogTalk1","GLOBAL",4)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+OR(2)
+ PartyHasItem("L#2EDDOG")
+ Global("L#2EddardHasADog","GLOBAL",1)
+Global("L#2EddardDogTalk1","GLOBAL",4)
+GlobalTimerExpired("L#2EddardDogTime","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("L#2EddardDogTalk1","GLOBAL",5)
+END
+
+IF
+Global("L#2EddardDogTalk1","GLOBAL",5)
+THEN
+RESPONSE #100
+StartDialogue("L#2ED25J",Player1)
+END
+
+//Romance after fight
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+Global("L#2EddardRomanceActive","GLOBAL",2)
+Global("L#2EddardNastyGorion","GLOBAL",2)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+PlaySong(%L#2EDDR%)
+StartDialogue("L#2ED25J",Player1)
+END
+
+//Sleep - Romance
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+Global("L#2EddardRomanceActive","GLOBAL",2)
+Global("L#2EddardNastyGorion","GLOBAL",3)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("L#EddardSleepRomToB","GLOBAL",600)
+SetGlobal("L#2EddardNastyGorion","GLOBAL",4)
+END
+
+IF
+Global("L#2EddardNastyGorion","GLOBAL",5)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+PlaySong(%L#2EDDR%)
+StartDialogue("L#2ED25J",Player1)
+END
+
+IF
+Global("L#2EddardRomanceActive","GLOBAL",2)
+Global("L#2EddardNastyGorion","GLOBAL",6)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+PlaySong(%L#2EDDR%)
+StartDialogue("L#2ED25J",Player1)
+END
+
+//FINAL
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+Global("ChallengesDone","GLOBAL",1)
+Global("L#2EddardFinalTalkToB","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobalTimer("L#2EddardFinalTalkToBT","GLOBAL",14)
+SetGlobal("L#2EddardFinalTalkToB","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+!StateCheck("L#2EDDRD",CD_STATE_NOTVALID)
+Global("ChallengesDone","GLOBAL",1)
+Global("L#2EddardFinalTalkToB","GLOBAL",1)
+GlobalTimerExpired("L#2EddardFinalTalkToBT","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("L#2EddardFinalTalkToB","GLOBAL",2)
+END
+
+IF
+Global("L#2EddardRomanceActive","GLOBAL",2)
+Global("L#2EddardFinalTalkToB","GLOBAL",2)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+PlaySong(%L#2EDDR%)
+StartDialogue("L#2ED25J",Player1)
+END
+
+IF
+!Global("L#2EddardRomanceActive","GLOBAL",2)
+Global("L#2EddardFinalTalkToB","GLOBAL",2)
+THEN
+RESPONSE #100
+StartDialogue("L#2ED25J",Player1)
+END
+
+//SKIE DEAD
+
+IF
+InParty(Myself)
+CombatCounter(0)
+See(Player1)
+!InPartySlot("L#2SDSKIE",0)
+!InPartySlot("L#2SDSKIE",1)
+!InPartySlot("L#2SDSKIE",2)
+!InPartySlot("L#2SDSKIE",3)
+!InPartySlot("L#2SDSKIE",4)
+!InPartySlot("L#2SDSKIE",5)
+Dead("L#2SDSKIE")
+Global("L#2EddardBlockEverything","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("L#2EddardBlockEverything","GLOBAL",1)
+END
+
+IF
+Global("L#2EddardBlockEverything","GLOBAL",1)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("L#2EddardBlockEverything","GLOBAL",2)
+OR(2)
+ Global("L#2EddardRomanceActive","GLOBAL",1)
+ Global("L#2EddardRomanceActive","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("L#2EddardRomanceActive","GLOBAL",3)
+END
+ 
+IF
+Global("L#2EddardBlockEverything","GLOBAL",2)
+OR(2)
+ Global("L#2EddardFriendshipActive","GLOBAL",1)
+ Global("L#2EddardFriendshipActive","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("L#2EddardFriendshipActive","GLOBAL",3)
+END
+
+//ROMANCE KILL
+
+IF
+OR(2)
+Global("L#2EddardRomanceActive","GLOBAL",1)
+Global("L#2EddardRomanceActive","GLOBAL",2)
+OR(44)
+Global("AerieRomanceActive","GLOBAL",2)        //Aerie
+Global("JaheiraRomanceActive","GLOBAL",2)      //Jaheira
+Global("AnomenRomanceActive","GLOBAL",2)       //Anomen
+Global("ViconiaRomanceActive","GLOBAL",2)      //Viconia
+Global("NeeraRomanceActive","GLOBAL",2)        //Neera
+Global("RasaadRomanceActive","GLOBAL",2)       //Rasaad
+Global("HexxatRomanceActive","GLOBAL",2)       //Hexxat
+Global("DornRomanceActive","GLOBAL",2)         //Dorn
+Global("ImoenRomanceActive","GLOBAL",2)        //Mirrabo's Imoen
+Global("NaliaRomanceActive","GLOBAL",2)        //Arnel's Nalia
+Global("PGNaliaRomanceActive","GLOBAL",2)      //Pocket Plane Group's Nalia
+Global("NathRomanceActive","GLOBAL",2)         //Nathaniel
+Global("LK#NindeRomanceActive","GLOBAL",2)     //Ninde
+Global("SaerilethRomanceActive","GLOBAL",2)    //Saerileth
+Global("SimeRomanceActive","GLOBAL",2)         //Sime
+GlobalGT("SolaTalk","GLOBAL",14)               //Solaufein
+Global("TashiaRomanceActive","GLOBAL",2)       //Tashia
+Global("G#TF.TyrisRomanceActive","GLOBAL",2)   //Tyris Flare
+Global("E3FADEROMANCEACTIVE","GLOBAL",2)       //Fade
+Global("O#BranRomanceActive","GLOBAL",2)       //Branwen
+Global("rh#IsraRomanceActive","GLOBAL",2)      //Isra
+Global("L3PetsyRomanceActive","GLOBAL",2)      //Petsy 
+Global("C0SireneRomanceActive","GLOBAL",2)     //Sirene
+Global("L#2VerrRomanceActive","GLOBAL",2)      //Verr'Sza
+Global("YvetteRomanceActive","GLOBAL",2)       //Yvette
+Global("YoshimoRomanceActive","GLOBAL",2)      //Yoshimo
+Global("C#AjantisRomanceActive","GLOBAL",2)    //Ajantis
+Global("ChloeRomanceActiveCR","GLOBAL",2)      //Chloe
+Global("T1DarRomanceActive","GLOBAL",2)        //Darian
+Global("B!GavRA","GLOBAL",2)                   //Gavin
+Global("B!KeldornRA","GLOBAL",2)               //Keldorn
+Global("J#KelseyRomanceActive","GLOBAL",2)     //Kelsey
+Global("SK#NehtRomanceActive","GLOBAL",2)      //Neh'taniel
+Global("SarahRomanceActive","GLOBAL",2)        //Sarah
+Global("TsujathaRomanceActive","GLOBAL",2)     //Tsujatha
+Global("O#XanRomanceActive","GLOBAL",2)        //Xan 
+Global("rh#EvaRomanceActive","GLOBAL",2)       //Evendra
+Global("P#KivanRomanceInactive","GLOBAL",2)    //Kivan
+Global("EdwinRomanceActive","GLOBAL",2)        //Edwin
+Global("KKCalinRomanceActive","GLOBAL",2)      //Calin
+Global("LS#SarevokRomanceActive","GLOBAL",2)   //Sarevok
+Global("LS_HaerDalisRomanceActive","GLOBAL",2) //Haer'Dalis
+Global("L#2WalahnanFlirt","GLOBAL",2)          //Walahnan
+Global("L#FaldornRomanceActive","GLOBAL",2)    //Faldorn
+THEN
+RESPONSE #100
+SetGlobal("L#2EddardRomanceActive","GLOBAL",3)
+END

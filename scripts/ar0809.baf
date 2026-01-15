@@ -1,0 +1,10 @@
+// Appended to Bodhi's lair to spawn Vamp! Faldorn
+
+IF
+  Global("L#2EddardVampire","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("L#2EddardVampire","GLOBAL",2)
+    CreateCreature("l#2edvam",[1473.332],2)
+    Continue()
+END

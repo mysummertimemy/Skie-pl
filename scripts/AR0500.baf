@@ -1,0 +1,47 @@
+/*
+
+IF
+Global("L#2SkieCutOutVullysH","GLOBAL",0)
+THEN
+RESPONSE #100
+TriggerActivation("l#sd02",FALSE)
+SetGlobal("L#2SkieCutOutVullysH","GLOBAL",1)
+END
+
+*/
+
+IF
+InParty("L#2SDSkie")
+Global("L#2SkiEddardQuest","GLOBAL",0)
+GlobalGT("L#2SDMissiniReturns","GLOBAL",2)
+Global("L#2SkieEddardVully","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("L#2SDEDQ",[3120.2110],12)
+SetGlobal("L#2SkieEddardVully","GLOBAL",1)
+END
+
+IF
+Global("L#2SkieEddardVully","GLOBAL",2)
+Global("L#2SkiEddardQuest","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("L#2SkiEddardQuest","GLOBAL",1)
+ActionOverride("L#2SDSkie",StartDialogueNoSet(Player1))
+END
+
+IF
+Global("L#2SkiEddardQuest","GLOBAL",7)
+THEN
+RESPONSE #100
+CreateCreature("L#2SDEDG",[3285.2370],0)
+SetGlobal("L#2SkiEddardQuest","GLOBAL",8)
+END
+
+IF
+Global("L#2SkiEddardQuest","GLOBAL",9)
+THEN
+RESPONSE #100
+SetGlobal("L#2SkiEddardQuest","GLOBAL",10)
+ActionOverride("L#2SDSkie",StartDialogueNoSet(Player1))
+END

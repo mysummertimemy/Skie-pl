@@ -1,0 +1,71 @@
+IF
+Global("L#2SkieDagger","GLOBAL",21)
+NumDead("L#2SDMO1",9)
+THEN
+RESPONSE #100
+DisplayStringHead(Player1,@0 /* (Prepare yourself for the second wave of enemies) */)
+SetGlobal("L#2SkieDagger","GLOBAL",22)
+SetGlobalTimer("L#2SDWeavePause","L#SD01",10)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",22)
+GlobalTimerExpired("L#2SDWeavePause","L#SD01")
+THEN
+RESPONSE #100
+SetGlobal("L#2SkieDagger","GLOBAL",23)
+CreateCreatureObjectDoor("L#2SDMO2",Player1,0,0,0)
+CreateCreatureObjectDoor("L#2SDMO2",Player1,0,0,0)
+CreateCreatureObjectDoor("L#2SDMO2",Player1,0,0,0)
+CreateCreatureObjectDoor("L#2SDMO2",Player1,0,0,0)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",23)
+NumDead("L#2SDMO2",4)
+THEN
+RESPONSE #100
+DisplayStringHead(Player1,@1 /* (Prepare yourself for the third wave of enemies) */)
+SetGlobal("L#2SkieDagger","GLOBAL",24)
+SetGlobalTimer("L#2SDWeavePause","L#SD01",10)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",24)
+GlobalTimerExpired("L#2SDWeavePause","L#SD01")
+THEN
+RESPONSE #100
+SetGlobal("L#2SkieDagger","GLOBAL",25)
+CreateCreatureObjectDoor("L#2SDMO3",Player1,0,0,0)
+CreateCreatureObjectDoor("L#2SDMO3",Player1,0,0,0)
+CreateCreatureObjectDoor("L#2SDMO3",Player1,0,0,0)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",25)
+NumDead("L#2SDMO3",3)
+THEN
+RESPONSE #100
+DisplayStringHead(Player1,@2 /* (Prepare yourself for the fourth wave of enemies) */)
+SetGlobal("L#2SkieDagger","GLOBAL",26)
+SetGlobalTimer("L#2SDWeavePause","L#SD01",10)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",26)
+GlobalTimerExpired("L#2SDWeavePause","L#SD01")
+THEN
+RESPONSE #100
+SetGlobal("L#2SkieDagger","GLOBAL",27)
+CreateCreatureObjectDoor("L#2SDMO4",Player1,0,0,0)
+END
+
+IF
+Dead("L#2SDMO4")
+Global("L#2SkieDagger","GLOBAL",27)
+THEN
+RESPONSE #100
+DisplayStringHead(Player1,@3 /* (You can sense something coming in your direction) */)
+CreateCreatureObjectDoor("L#2SDSOU",Player1,0,0,0)
+SetGlobal("L#2SkieDagger","GLOBAL",28)
+END

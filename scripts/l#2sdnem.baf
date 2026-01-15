@@ -1,0 +1,15 @@
+IF
+Global("L#2SkieDagger","GLOBAL",8)
+THEN
+RESPONSE #100
+SetGlobal("L#2SkieDagger","GLOBAL",9)
+SetGlobalTimer("L#2SkieDaggerStudy","GLOBAL",THREE_DAYS)
+EscapeArea()
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",20)
+THEN
+RESPONSE #100
+StartCutScene("L#2SDCU1")
+END

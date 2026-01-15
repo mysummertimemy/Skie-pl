@@ -1,0 +1,18 @@
+IF
+Global("L2SDEldothPlot","GLOBAL",1)
+See([PC])
+InMyArea(Player1)
+InMyArea("L#2SDSkie")
+CombatCounter(0)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("L2SDEldothPlot","GLOBAL",4)
+See([PC])
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END

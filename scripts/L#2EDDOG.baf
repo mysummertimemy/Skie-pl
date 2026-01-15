@@ -1,0 +1,11 @@
+IF
+InParty("L#2EDDRD")
+!See([ENEMY])
+See("L#2EDDRD")
+Range("L#2EDDRD",10)
+!Dead("L#2EDDRD")
+Global("L#2EddardHasADog","GLOBAL",0)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END

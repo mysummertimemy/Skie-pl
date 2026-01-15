@@ -1,0 +1,10 @@
+IF
+	IfValidForPartyDialog("L#2SDSkie")  // Skie
+	CombatCounter(0)
+	Global("OHD_GORGE_NTRJEX","OH5100",1)  // Dorn - Resurrection Gorge
+THEN
+	RESPONSE #100
+		TriggerActivation("GorgeInterjects",FALSE)
+		ActionOverride("L#2SDSkie",StartDialogNoSet(Player1))
+END
+

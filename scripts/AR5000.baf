@@ -1,0 +1,7 @@
+IF
+Global("L#2EddardPuppy","AR5000",0)
+THEN
+RESPONSE #100
+CreateCreature("L#2EDDOG",[1240.1530],12)
+SetGlobal("L#2EddardPuppy","AR5000",1)
+END

@@ -1,0 +1,28 @@
+IF
+InParty("L#2SDSkie")
+Range([PC],14)
+Global("L#2SkieEddardVully","GLOBAL",1)
+THEN
+RESPONSE #100
+StartCutSceneMode()
+ClearAllActions()
+MoveViewPoint([3120.2110],INSTANT)
+Wait(2)
+MoveToPoint([3420.2090])
+Wait(1)
+SetGlobal("L#2SkieEddardVully","GLOBAL",2)
+EndCutSceneMode()
+TriggerActivation("l#sd01",TRUE)
+DestroySelf()
+END
+
+IF
+AreaCheck("L#SD02")
+See("L#2SDSkie")
+InParty("L#2SDSkie")
+Global("L#2SkiEddardQuest","GLOBAL",2)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+

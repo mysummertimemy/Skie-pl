@@ -1,0 +1,20 @@
+IF
+Global("L#SkieShopCreate","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("L#SkieShopCreate","GLOBAL",1)
+CreateCreature("l#2sdsh",[2410.2730],1)
+Continue()
+END
+
+IF
+InParty("L#2SDSKIE")
+PartyHasItem("l#2sds01")
+CombatCounter(0)
+Global("L#SkieThatsMyBracelet","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("L#SkieThatsMyBracelet","GLOBAL",1)
+DisplayStringHead("L#2SDSKIE",@0)
+Continue()
+END

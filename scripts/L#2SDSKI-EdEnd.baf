@@ -1,0 +1,98 @@
+//SKIE THANK YOU IF EDDARD IS OKAY
+
+IF
+CombatCounter(0)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck("L#2SDSkie",CD_STATE_NOTVALID)
+Global("L#2SkieThankYouReally","GLOBAL",0)
+Global("L#2SkiEddardQuest","GLOBAL",15)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("L#2SkieThankYouReallyT","GLOBAL",900)
+SetGlobal("L#2SkieThankYouReally","GLOBAL",1)
+END
+
+IF
+CombatCounter(0)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+!StateCheck("L#2SDSkie",CD_STATE_NOTVALID)
+Global("L#2SkieThankYouReally","GLOBAL",1)
+RealGlobalTimerExpired("L#2SkieThankYouReallyT","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("L#2SkieThankYouReally","GLOBAL",2)
+END
+
+IF
+Global("L#2SkieThankYouReally","GLOBAL",2)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+StartDialogue("L#2SDSKJ",Player1)
+END
+
+//JOURNAL ENTRIES
+
+IF
+Global("L#2SkiEddardQuest","GLOBAL",2)
+Global("L#2SkiEddardQuestJ","GLOBAL",0)
+THEN
+RESPONSE #100
+AddJournalEntry(@0 /* Skie's Bizarre Discovery
+Skie saw a man that was reported dead. He went down the sairs down, to lower levels of Bridge District. He asked us to check how is that possible. */,QUEST)
+SetGlobal("L#2SkiEddardQuestJ","GLOBAL",1)
+END
+
+IF
+Global("L#2SkiEddardQuest","GLOBAL",3)
+Global("L#2SkiEddardQuestJ","GLOBAL",1)
+THEN
+RESPONSE #100
+EraseJournalEntry(@0 /* Skie's Bizarre Discovery
+Skie saw a man that was reported dead. He went down the sairs down, to lower levels of Bridge District. He asked us to check how is that possible. */)
+AddJournalEntry(@1 /* Skie's Bizarre Discovery
+We found out that Eddard Silvershield is not dead! Skie asked us to continue the investigation. If we make it in time, perhaps we'll be able to free him. We should check both Vully's house and then go wherever the clues takes us next. */,QUEST)
+SetGlobal("L#2SkiEddardQuestJ","GLOBAL",2)
+END
+
+IF
+Global("L#2SkiEddardQuest","GLOBAL",7)
+Global("L#2SkiEddardQuestJ","GLOBAL",2)
+THEN
+RESPONSE #100
+EraseJournalEntry(@1 /* Skie's Bizarre Discovery
+We found out that Eddard Silvershield is not dead! Skie asked us to continue the investigation. If we make it in time, perhaps we'll be able to free him. We should check both Vully's house and then go wherever the clues takes us next. */)
+AddJournalEntry(@2 /* Skie's Bizarre Discovery
+We found out that Eddard Silvershield is not dead! Skie asked us to continue the investigation. Our next move should be talking to a man that should be somewhere behind Villy's house. */,QUEST)
+SetGlobal("L#2SkiEddardQuestJ","GLOBAL",3)
+END
+
+IF
+Global("L#2SkiEddardQuest","GLOBAL",7)
+Global("L#2SkiEddardQuestJ","GLOBAL",3)
+THEN
+RESPONSE #100
+EraseJournalEntry(@2 /* Skie's Bizarre Discovery
+We found out that Eddard Silvershield is not dead! Skie asked us to continue the investigation. Our next move should be talking to a man that should be somewhere behind Villy's house. */)
+AddJournalEntry(@3 /* Skie's Bizarre Discovery
+We found out that Eddard Silvershield is not dead! Skie asked us to continue the investigation. We know Eddard, the slaver that captured him, and the buyer should all be somewhere in the Docks. */,QUEST)
+SetGlobal("L#2SkiEddardQuestJ","GLOBAL",4)
+END
+
+IF
+Global("L#2SkiEddardQuest","GLOBAL",7)
+Global("L#2SkiEddardQuestJ","GLOBAL",3)
+THEN
+RESPONSE #100
+EraseJournalEntry(@3 /* Skie's Bizarre Discovery
+We found out that Eddard Silvershield is not dead! Skie asked us to continue the investigation. We know Eddard, the slaver that captured him, and the buyer should all be somewhere in the Docks. */)
+AddJournalEntry(@4 /* Skie's Bizarre Discovery
+We found out that Eddard Silvershield is not dead and we managed to save him from the slavers that tried to sell him. */,QUEST_DONE)
+SetGlobal("L#2SkiEddardQuestJ","GLOBAL",4)
+END

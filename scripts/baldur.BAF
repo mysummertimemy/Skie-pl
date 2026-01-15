@@ -1,0 +1,189 @@
+//weird dagger duplicate
+
+IF
+NumItemsPartyGT("l#2sda1",1)
+THEN
+RESPONSE #100
+TakePartyItem("l#2sda1")
+END
+
+//THE SOULTAKER: QUEST PROGRESSION
+
+IF
+PartyHasItem("L#2SDA1")
+Global("L#2SkieDagger","GLOBAL",0)
+THEN
+RESPONSE #100
+AddJournalEntry(@0 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. I need to find some experienced person who knows much about magical items. */,QUEST)
+SetGlobal("L#2SkieDagger","GLOBAL",1)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",2)
+AreaCheckObject("AR0700",Player1)
+THEN
+RESPONSE #100
+SetGlobal("L#2SkieDagger","GLOBAL",3)
+CreateCreatureObjectOffset("BRELM",Player1,[10.10])
+ActionOverride("BRELM",StartDialogueNoSet(Player1))
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",4)
+THEN
+RESPONSE #100
+EraseJournalEntry(@0 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. I need to find some experienced person who knows much about magical items. */)
+AddJournalEntry(@1 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem, who should be somewhere in the Slums. She may be able to help me. */,QUEST)
+SetGlobal("L#2SkieDagger","GLOBAL",5)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",9)
+THEN
+RESPONSE #100
+EraseJournalEntry(@1 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem, who should be somewhere in the Slums. She may be able to help me. */)
+AddJournalEntry(@2 /* The Soultaker
+I found The Soultaker - the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. She has to first study the blade, though. We're to meet again in the Slums after three days. */,QUEST)
+SetGlobal("L#2SkieDagger","GLOBAL",10)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",13)
+THEN
+RESPONSE #100
+EraseJournalEntry(@3 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. She has to first study the blade, though. We're to meet again in Slums after three days. */)
+AddJournalEntry(@4 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. After she studied the blade, she told me that a sacrifice must be made to restore Skie's soul: another soul must replace it. I was advised to talk to people from the Slums. Perhaps I will find someone who will agree to help me? */,QUEST)
+SetGlobal("L#2SkieDagger","GLOBAL",14)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",16)
+THEN
+RESPONSE #100
+EraseJournalEntry(@4 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. After she studied the blade, she told me that a sacrifice must be made to restore Skie's soul: another soul must replace it. I was advised to talk to people from the Slums. Perhaps I will find someone who will agree to help me? */)
+AddJournalEntry(@5 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. After she studied the blade, she told me that a sacrifice must be made to restore Skie's soul: another soul must replace it. And after a brief search, I found someone who was ready to help me. Now I should get back to Nem. */,QUEST)
+SetGlobal("L#2SkieDagger","GLOBAL",17)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",18)
+THEN
+RESPONSE #100
+EraseJournalEntry(@5 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. After she studied the blade, she told me that a sacrifice must be made to restore Skie's soul: another soul must replace it. And after a brief search, I found someone who was ready to help me. Now I should get back to Nem. */)
+AddJournalEntry(@6 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. After she studied the blade, she told me that a sacrifice must be made to restore Skie's soul: another soul must replace it. And after a brief search, I found someone who was ready to help me. I talked to Nem and she told me to come back once I'm ready for the ritual. */,QUEST)
+SetGlobal("L#2SkieDagger","GLOBAL",19)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",31)
+THEN
+RESPONSE #100
+EraseJournalEntry(@6 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. After she studied the blade, she told me that a sacrifice must be made to restore Skie's soul: another soul must replace it. And after a brief search, I found someone who was ready to help me. I talked to Nem and she told me to come back once I'm ready for the ritual. */)
+AddJournalEntry(@7 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. With the help of Nem, an elder mage I met in the Athkatlan Slums, I finally managed to complete a ritual and restore Skie's soul. It came with a price, but... there was no other way. Now I should wait for some news. I'm sure that people will soon start talking about the Silvershield girl coming back to life. */,QUEST)
+SetGlobalTimer("L#2SkieNews","GLOBAL",THREE_DAYS)
+SetGlobal("L#2SkieDagger","GLOBAL",32)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",32)
+CombatCounter(0)
+GlobalTimerExpired("L#2SkieNews","GLOBAL")
+AreaType(CITY)
+THEN
+RESPONSE #100
+StartCutSceneMode()
+Wait(1)
+CreateCreatureObjectOffset("L#2SDMES",Player1,[40.40])
+SmallWait(1)
+CreateVisualEffectObject("SPDIMNDR","l#2sdmes")
+Wait(5)
+SetGlobal("L#2SkieDagger","GLOBAL",33)
+Wait(1)
+EndCutSceneMode()
+ActionOverride("L#2SDMES",StartDialogueNoSet(Player1))
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",34)
+THEN
+RESPONSE #100
+EraseJournalEntry(@8 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. With the help of Nem, an elder mage I met in Athkatlan Slums, I finally managed to complete a ritual and restore Skie's soul. It came with a price, but... there was no other way. Now I should wait for some news. I'm sure that people will soon start talking about the Silvershield girl coming back to life. */)
+AddJournalEntry(@9 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. With the help of Nem, an elder mage I met in Athkatlan Slums, I finally managed to complete a ritual and restore Skie's soul. It came with a price, but... there was no other way. After some time a messenger from Baldur's Gate paid me a visit. She told me that Skie returned to life. */,QUEST_DONE)
+SetGlobal("L#2SkieDagger","GLOBAL",35)
+AddXPObject(Player1,11000)
+AddXPObject(Player2,11000)
+AddXPObject(Player3,11000)
+AddXPObject(Player4,11000)
+AddXPObject(Player5,11000)
+AddXPObject(Player6,11000)
+END
+
+//THE SOULTAKER: QUEST FAILED
+
+IF
+Global("L#2SkieDaggerImoen","GLOBAL",50)
+Global("L#2SDToldImoenNo","GLOBAL",0)
+THEN
+RESPONSE #100
+TakePartyItem("L#2SDA1") 
+DestroyItem("L#2SDA1")
+EraseJournalEntry(@0 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. I need to find some experienced person who knows much about magical items. */)
+SetGlobal("L#2SkieDaggerImoen","GLOBAL",100)
+SetGlobal("L#2SkieDagger","GLOBAL",100)
+SetGlobal("L#2SDToldImoenNo","GLOBAL",1)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",50)
+Global("L#2SDFailedLater","GLOBAL",0)
+THEN
+RESPONSE #100
+TakePartyItem("L#2SDA1") 
+DestroyItem("L#2SDA1")
+EraseJournalEntry(@0 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. I need to find some experienced person who knows much about magical items. */)
+EraseJournalEntry(@1 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem, who should be somewhere in the Slums. She may be able to help me. */)
+EraseJournalEntry(@2 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. She has to first study the blade, though. We're to meet again in the Slums after three days. */)
+EraseJournalEntry(@3 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. After she studied the blade, she told me that a sacrifice must be made to restore Skie's soul: another soul must replace it. I was advised to talk to people from Slums. Perhaps I will find someone who will agree to help me? */)
+EraseJournalEntry(@4 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. After she studied the blade, she told me that a sacrifice must be made to restore Skie's soul: another soul must replace it. I was advised to talk to people from the Slums. Perhaps I will find someone who will agree to help me? */)
+EraseJournalEntry(@5 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. After she studied the blade, she told me that a sacrifice must be made to restore Skie's soul: another soul must replace it. And after a brief search, I found someone who was ready to help me. Now I should get back to Nem. */)
+EraseJournalEntry(@6 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. The blade is broken and causes magical surges, but perhaps there is a chance to save my old companion. Brelm told me that I should speak to his friend, Nem. And indeed she may help me. After she studied the blade, she told me that a sacrifice must be made to restore Skie's soul: another soul must replace it. And after a brief search, I found someone who was ready to help me. I talked to Nem and she told me to come back once I'm ready for the ritual. */)
+EraseJournalEntry(@7 /* The Soultaker
+I found The Soultaker -- the enchanted blade Irenicus used to trick me and take Skie's soul. With help of Nem, an elder mage I met in Athkatlan Slums, I finally managed to complete a ritual and restore Skie's soul. It came with a price, but... there was no other way. Now I should wait for some news. I'm sure that people will soon start talking about the Silvershield girl coming back to life. */)
+SetGlobal("L#2SkieDagger","GLOBAL",100)
+SetGlobal("L#2SDFailedLater","GLOBAL",1)
+END
+
+IF
+AreaCheck("AR0400")
+Global("L#2SDSendIt","GLOBAL",1)
+THEN
+RESPONSE #100
+ActionOverride("L#2SDPYL",DestroySelf())
+ActionOverride("L#2SDBON",DestroySelf())
+ActionOverride("L#2SDROI",DestroySelf())
+SetGlobal("L#2SDSendIt","GLOBAL",2)
+END
+
+

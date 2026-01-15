@@ -1,0 +1,20 @@
+IF
+Global("L#2SkieDagger","GLOBAL",33)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("L#2SDMissiniReturns","GLOBAL",2)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END
+
+IF
+Global("L#2EddardFriendTalk","GLOBAL",10)
+THEN
+RESPONSE #100
+StartDialogueNoSet(Player1)
+END

@@ -1,0 +1,25 @@
+//MATCH EDDARD
+
+IF
+Global("L#2EddardMatch","GLOBAL",0)
+!Alignment(Player1,MASK_EVIL)
+CheckStatGT(Player1,12,CHR)
+THEN
+RESPONSE #100
+SetGlobal("L#2EddardMatch","GLOBAL",1)
+Continue()
+END
+
+//EDDARD SKIE
+
+IF
+CombatCounter(0)
+InParty("L#2SDSkie")
+!InPartyAllowDead("L#2Eddrd")
+Dead("L#2Eddrd")
+Global("L#2SDSkieCommentEddardsDeath","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("L#2SDSkieCommentEddardsDeath","GLOBAL",1)
+ActionOverride("L#2SDSkie",StartDialogueNoSet(Player1))
+END

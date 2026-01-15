@@ -1,0 +1,207 @@
+//HAIR 1
+
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2EddardBIO","GLOBAL",0)
+   InParty("L#2EDDRD")
+   Global("L#2EddardHasADog","GLOBAL",0)
+   !PartyHasItem("L#2EDDOG")
+   OR(3)
+    Global("L#2EddardRomanceActive","GLOBAL",0)
+    Global("L#2EddardRomanceActive","GLOBAL",1)
+    Global("L#2EddardRomanceActive","GLOBAL",3)
+   OR(2)
+    Global("L#2EddardHairCut","GLOBAL",0)
+    Global("L#2EddardHairCut","GLOBAL",6)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2EddardBIO","GLOBAL",1)
+      TextScreen("L#2EdEp1")
+      SmallWait(1)
+      Continue()
+END
+
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2EddardBIO","GLOBAL",0)
+   InParty("L#2EDDRD")
+   OR(2)
+    Global("L#2EddardHasADog","GLOBAL",1)
+    PartyHasItem("L#2EDDOG")
+   OR(3)
+    Global("L#2EddardRomanceActive","GLOBAL",0)
+    Global("L#2EddardRomanceActive","GLOBAL",1)
+    Global("L#2EddardRomanceActive","GLOBAL",3)
+   OR(2)
+    Global("L#2EddardHairCut","GLOBAL",0)
+    Global("L#2EddardHairCut","GLOBAL",6)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2EddardBIO","GLOBAL",1)
+      TextScreen("L#2EdEp2")
+      SmallWait(1)
+      Continue()
+END
+
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2EddardBIO","GLOBAL",0)
+   InParty("L#2EDDRD")
+   Global("L#2EddardHasADog","GLOBAL",0)
+   !PartyHasItem("L#2EDDOG")
+   Global("PlayerChoseEssence","GLOBAL",0)
+   Global("L#2EddardRomanceActive","GLOBAL",2)
+   OR(2)
+    Global("L#2EddardHairCut","GLOBAL",0)
+    Global("L#2EddardHairCut","GLOBAL",6)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2EddardBIO","GLOBAL",1)
+      TextScreen("L#2EdEp3")
+      SmallWait(1)
+      Continue()
+END
+
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2EddardBIO","GLOBAL",0)
+   InParty("L#2EDDRD")
+   OR(2)
+    Global("L#2EddardHasADog","GLOBAL",1)
+    PartyHasItem("L#2EDDOG")
+   Global("PlayerChoseEssence","GLOBAL",0)
+   Global("L#2EddardRomanceActive","GLOBAL",2)
+   OR(2)
+    Global("L#2EddardHairCut","GLOBAL",0)
+    Global("L#2EddardHairCut","GLOBAL",6)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2EddardBIO","GLOBAL",1)
+      TextScreen("L#2EdEp4")
+      SmallWait(1)
+      Continue()
+END
+
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2EddardBIO","GLOBAL",0)
+   InParty("L#2EDDRD")
+   Global("PlayerChoseEssence","GLOBAL",1)
+   Global("L#2EddardRomanceActive","GLOBAL",2)
+   OR(2)
+    Global("L#2EddardHairCut","GLOBAL",0)
+    Global("L#2EddardHairCut","GLOBAL",6)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2EddardBIO","GLOBAL",1)
+      TextScreen("L#2EdEp5")
+      SmallWait(1)
+      Continue()
+END
+
+//HAIR 2
+
+
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2EddardBIO","GLOBAL",0)
+   InParty("L#2EDDRD")
+   Global("L#2EddardHasADog","GLOBAL",0)
+   !PartyHasItem("L#2EDDOG")
+   OR(3)
+    Global("L#2EddardRomanceActive","GLOBAL",0)
+    Global("L#2EddardRomanceActive","GLOBAL",1)
+    Global("L#2EddardRomanceActive","GLOBAL",3)
+   OR(3)
+    Global("L#2EddardHairCut","GLOBAL",2)
+    Global("L#2EddardHairCut","GLOBAL",3)
+    Global("L#2EddardHairCut","GLOBAL",4)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2EddardBIO","GLOBAL",1)
+      TextScreen("L#2EdEp6")
+      SmallWait(1)
+      Continue()
+END
+
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2EddardBIO","GLOBAL",0)
+   InParty("L#2EDDRD")
+   OR(2)
+    Global("L#2EddardHasADog","GLOBAL",1)
+    PartyHasItem("L#2EDDOG")
+   OR(3)
+    Global("L#2EddardRomanceActive","GLOBAL",0)
+    Global("L#2EddardRomanceActive","GLOBAL",1)
+    Global("L#2EddardRomanceActive","GLOBAL",3)
+   OR(3)
+    Global("L#2EddardHairCut","GLOBAL",2)
+    Global("L#2EddardHairCut","GLOBAL",3)
+    Global("L#2EddardHairCut","GLOBAL",4)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2EddardBIO","GLOBAL",1)
+      TextScreen("L#2EdEp7")
+      SmallWait(1)
+      Continue()
+END
+
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2EddardBIO","GLOBAL",0)
+   InParty("L#2EDDRD")
+   Global("L#2EddardHasADog","GLOBAL",0)
+   !PartyHasItem("L#2EDDOG")
+   Global("PlayerChoseEssence","GLOBAL",0)
+   Global("L#2EddardRomanceActive","GLOBAL",2)
+   OR(3)
+    Global("L#2EddardHairCut","GLOBAL",2)
+    Global("L#2EddardHairCut","GLOBAL",3)
+    Global("L#2EddardHairCut","GLOBAL",4)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2EddardBIO","GLOBAL",1)
+      TextScreen("L#2EdEp8")
+      SmallWait(1)
+      Continue()
+END
+
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2EddardBIO","GLOBAL",0)
+   InParty("L#2EDDRD")
+   OR(2)
+    Global("L#2EddardHasADog","GLOBAL",1)
+    PartyHasItem("L#2EDDOG")
+   Global("PlayerChoseEssence","GLOBAL",0)
+   Global("L#2EddardRomanceActive","GLOBAL",2)
+   OR(3)
+    Global("L#2EddardHairCut","GLOBAL",2)
+    Global("L#2EddardHairCut","GLOBAL",3)
+    Global("L#2EddardHairCut","GLOBAL",4)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2EddardBIO","GLOBAL",1)
+      TextScreen("L#2EdEp9")
+      SmallWait(1)
+      Continue()
+END
+
+IF
+   Global("StartEndBios","AR6200",1)
+   Global("L#2EddardBIO","GLOBAL",0)
+   InParty("L#2EDDRD")
+   Global("PlayerChoseEssence","GLOBAL",1)
+   Global("L#2EddardRomanceActive","GLOBAL",2)
+   OR(3)
+    Global("L#2EddardHairCut","GLOBAL",2)
+    Global("L#2EddardHairCut","GLOBAL",3)
+    Global("L#2EddardHairCut","GLOBAL",4)
+THEN
+   RESPONSE #100
+      SetGlobal("L#2EddardBIO","GLOBAL",1)
+      TextScreen("L#2EdEp0")
+      SmallWait(1)
+      Continue()
+END

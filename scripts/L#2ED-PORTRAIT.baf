@@ -1,0 +1,25 @@
+IF
+InParty(Myself)
+Global("L#2EddardHairCut","GLOBAL",1)
+THEN
+RESPONSE #100
+ StartCutSceneMode()
+ Wait(1)
+ ApplySpellRES("L#2EDPOR",Myself)
+ FadeFromColor([20.0],0)
+ Wait(1)
+ SetGlobal("L#2EddardHairCut","GLOBAL",2)
+ EndCutSceneMode() 
+ RestParty()
+END
+
+IF
+InParty(Myself)
+Global("L#2EddardHairCut","GLOBAL",4)
+GlobalTimerExpired("L#2EddardGrowBack","GLOBAL")
+THEN
+RESPONSE #100
+ApplySpellRES("L#2EDPR2",Myself)
+SetGlobal("L#2EddardHairCut","GLOBAL",5)
+RestParty()
+END

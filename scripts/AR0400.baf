@@ -1,0 +1,55 @@
+//SOULTAKER: SLUMS
+
+IF
+Global("L#2SkieDagger","GLOBAL",5)
+THEN
+RESPONSE #100
+CreateCreature("L#2SDNEM",[3320.2860],5)
+SetGlobal("L#2SkieDagger","GLOBAL",6)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",10)
+GlobalTimerExpired("L#2SkieDaggerStudy","GLOBAL")
+THEN
+RESPONSE #100
+CreateCreature("L#2SDNEM",[3320.2860],5)
+SetGlobal("L#2SkieDagger","GLOBAL",11)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",12)
+THEN
+RESPONSE #100
+CreateCreature("L#2SDPYL",[2600.960],5)
+CreateCreature("L#2SDROI",[390.2115],5)
+CreateCreature("L#2SDBON",[1345.1940],5)
+SetGlobal("L#2SkieDagger","GLOBAL",13)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",15)
+GlobalGT("L#2SDPyll","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("L#2SDPYL",[3355.2940],6)
+SetGlobal("L#2SkieDagger","GLOBAL",16)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",15)
+GlobalGT("L#2SDRoi","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("L#2SDROI",[3355.2940],6)
+SetGlobal("L#2SkieDagger","GLOBAL",16)
+END
+
+IF
+Global("L#2SkieDagger","GLOBAL",15)
+GlobalGT("L#2SDBontt","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("L#2SDBON",[3355.2940],6)
+SetGlobal("L#2SkieDagger","GLOBAL",16)
+END

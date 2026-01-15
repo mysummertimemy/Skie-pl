@@ -1,0 +1,18 @@
+//EDDARD SKIE
+
+IF
+CombatCounter(0)
+InParty("L#2SDSkie")
+!InPartySlot("L#2Eddrd",0)
+!InPartySlot("L#2Eddrd",1)
+!InPartySlot("L#2Eddrd",2)
+!InPartySlot("L#2Eddrd",3)
+!InPartySlot("L#2Eddrd",4)
+!InPartySlot("L#2Eddrd",5)
+Dead("L#2Eddrd")
+Global("L#2SDSkieCommentEddardsDeath","GLOBAL",0)
+THEN
+RESPONSE #100
+SetGlobal("L#2SDSkieCommentEddardsDeath","GLOBAL",1)
+ActionOverride("L#2SDSkie",StartDialogueNoSet(Player1))
+END

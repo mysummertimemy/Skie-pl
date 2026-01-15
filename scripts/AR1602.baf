@@ -1,0 +1,8 @@
+IF
+InParty("L#2SDSKIE")
+Global("L2SDEldothPlot","GLOBAL",0)
+THEN
+RESPONSE #100
+CreateCreature("L#2SDELD",[910.210],5)
+SetGlobal("L2SDEldothPlot","GLOBAL",1)
+END

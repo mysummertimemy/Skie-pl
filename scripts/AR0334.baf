@@ -1,0 +1,38 @@
+IF
+Global("l#2sdcromwell","GLOBAL",1)
+Global("l#2sdForgeItem","GLOBAL",1)
+Global("L#2SDBontt","GLOBAL",1)
+THEN
+ RESPONSE #100
+  TakePartyItem("l#2sda1") 
+  DestroyItem("l#2sda1")
+  GiveItemCreate("l#2sdag1",Player1,1,0,0) // completed item
+  SetGlobalTimer("L#SDTalkTimerForST","GLOBAL",16)
+  ActionOverride("wsmith01",StartDialogueNoSet([PC]))
+END
+
+IF
+Global("l#2sdcromwell","GLOBAL",1)
+Global("l#2sdForgeItem","GLOBAL",1)
+Global("L#2SDPyll","GLOBAL",1)
+THEN
+ RESPONSE #100
+  TakePartyItem("l#2sda1") 
+  DestroyItem("l#2sda1")
+  GiveItemCreate("l#2sdag2",Player1,1,0,0) // completed item
+  SetGlobalTimer("L#SDTalkTimerForST","GLOBAL",16)
+  ActionOverride("wsmith01",StartDialogueNoSet([PC]))
+END
+
+IF
+Global("l#2sdcromwell","GLOBAL",1)
+Global("l#2sdForgeItem","GLOBAL",1)
+Global("L#2SDRoi","GLOBAL",1)
+THEN
+ RESPONSE #100
+  TakePartyItem("l#2sda1") 
+  DestroyItem("l#2sda1")
+  GiveItemCreate("l#2sdag3",Player1,1,0,0) // completed item
+  SetGlobalTimer("L#SDTalkTimerForST","GLOBAL",16)
+  ActionOverride("wsmith01",StartDialogueNoSet([PC]))
+END

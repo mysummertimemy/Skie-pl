@@ -1,0 +1,12 @@
+IF
+InParty(Myself)
+CombatCounter(0)
+!See([ENEMY])
+See(Player1)
+Global("L#2EddardRomanceActive","GLOBAL",2)
+Global("L#2EddardNastyGorion","GLOBAL",4)
+RealGlobalTimerExpired("L#EddardSleepRomToB","GLOBAL")
+THEN
+RESPONSE #100
+SetGlobal("L#2EddardNastyGorion","GLOBAL",5)
+END

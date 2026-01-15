@@ -1,0 +1,142 @@
+/////////////////////////////////////
+/////////////////////////////////////
+////////////TIMERED TALKS////////////
+/////////////////////////////////////
+/////////////////////////////////////
+
+IF
+InParty(Myself)
+Global("L#2SDSkieFriendshipActive","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("L#2SDSkieFriendshipActive","GLOBAL",3)
+END
+
+IF
+Global("L#2SDSkieMean","GLOBAL",3)
+Global("L#2SDSkieFriendshipActive","GLOBAL",2)
+THEN 
+RESPONSE #100
+SetGlobal("L#2SDSkieFriendshipActive","GLOBAL",3)
+END
+
+IF
+InParty(Myself)
+!Global("L#2SDSkieFriendshipActive","GLOBAL",3)
+OR(3)
+Global("L#2SDSkieTalksToB","GLOBAL",0)
+Global("L#2SDSkieTalksToB","GLOBAL",3)
+Global("L#2SDSkieTalksToB","GLOBAL",6)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("L#2SDSkieTimerToB","GLOBAL",2400)
+IncrementGlobal("L#2SDSkieTalksToB","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!StateCheck("L#2SDSkie",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+RealGlobalTimerExpired("L#2SDSkieTimerToB","GLOBAL")
+!Global("L#2SDSkieFriendshipActive","GLOBAL",3)
+OR(3)
+Global("L#2SDSkieTalksToB","GLOBAL",1)
+Global("L#2SDSkieTalksToB","GLOBAL",4)
+Global("L#2SDSkieTalksToB","GLOBAL",7)
+THEN
+RESPONSE #100
+IncrementGlobal("L#2SDSkieTalksToB","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+!Global("L#2SDSkieFriendshipActive","GLOBAL",3)
+OR(3)
+Global("L#2SDSkieTalksToB","GLOBAL",2)
+Global("L#2SDSkieTalksToB","GLOBAL",5)
+Global("L#2SDSkieTalksToB","GLOBAL",8)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+PlaySong(0)
+PlaySong(%L#2SDSK%)
+StartDialogue("L#2SD25J",Player1)
+END
+
+IF
+Global("L#2SDSkieTalksToB","GLOBAL",9)
+Global("L#2SDSkieFriendshipActive","GLOBAL",2)
+THEN
+RESPONSE #100
+SetGlobal("L#2SDSkieTalksToB","GLOBAL",10)
+RealSetGlobalTimer("L#2SDSkieTimerToB","GLOBAL",2400)
+IncrementGlobal("L#2SDSkieTalksToB","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+CombatCounter(0)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!StateCheck("L#2SDSkie",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+RealGlobalTimerExpired("L#2SDSkieTimerToB","GLOBAL")
+Global("L#2SDSkieFriendshipActive","GLOBAL",2)
+Global("L#2SDSkieTalksToB","GLOBAL",11)
+THEN
+RESPONSE #100
+IncrementGlobal("L#2SDSkieTalksToB","GLOBAL",1)
+END
+
+IF
+InParty(Myself)
+Global("L#2SDSkieFriendshipActive","GLOBAL",2)
+Global("L#2SDSkieTalksToB","GLOBAL",12)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+PlaySong(0)
+PlaySong(%L#2SDSK%)
+StartDialogue("L#2SD25J",Player1)
+END
+
+//SARADUSH DESTROYED
+
+IF
+InParty(Myself)
+CombatCounter(0)
+InParty(Myself)
+!See([ENEMY])
+See(Player1)
+!StateCheck("L#2SDSkie",CD_STATE_NOTVALID)
+!StateCheck(Player1,CD_STATE_NOTVALID)
+Global("L#2SDSkieSaradush","GLOBAL",0)
+Global("SaradushSacked","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("L#2SDSkieSaradush","GLOBAL",1)
+END
+
+IF
+Global("L#2SDSkieSaradush","GLOBAL",1)
+THEN
+RESPONSE #100
+MoveToObject(Player1)
+StartDialogue("L#2SD25J",Player1)
+END
+
+//one time
+
+IF
+InParty(Myself)
+Global("L#SDOneTimeComparison","LOCALS",0)
+THEN
+RESPONSE #100
+RealSetGlobalTimer("L#2SDSkieComparisonTime","GLOBAL",8000)
+SetGlobal("L#SDOneTimeComparison","LOCALS",1)
+END
