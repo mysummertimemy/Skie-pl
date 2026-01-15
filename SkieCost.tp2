@@ -1,0 +1,769 @@
+BACKUP ~SkieCost\backup~
+AUTHOR ~Lava Del'Vortel~
+
+README ~SkieCost\ReadMe.txt~
+
+ALWAYS
+INCLUDE ~%MOD_FOLDER%/lib/fl#add_kit_ee.tpa~
+INCLUDE ~%MOD_FOLDER%/lib/functions.tph~
+END
+
+VERSION ~v6.3~
+
+AUTO_TRA ~SkieCost\translations\%s~
+
+/*
+
+ALWAYS
+  // No exception, everything needs to be converted
+  ACTION_DEFINE_ARRAY SKIECOSTnoconvert BEGIN END
+
+  // any tra files used in LANGUAGE need to be reloaded after UTF-8 conversion
+  ACTION_DEFINE_ARRAY SKIECOSTreload BEGIN baldur SkieCost END
+
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      infer_charsets = 1
+    STR_VAR
+      tra_path = EVAL ~%MOD_FOLDER%/translations~
+      noconvert_array = SKIECOSTnoconvert
+      reload_array = SKIECOSTreload
+  END
+END
+
+*/
+
+LANGUAGE ~English~
+         ~english~
+         ~SkieCost\translations\English\SkieCost.tra~
+
+LANGUAGE ~Russian (by Ulpian, Kirian, fufel007 & Arcanecoast Team)~
+         ~russian~
+         ~SkieCost\translations\russian\SkieCost.tra~
+
+LANGUAGE  ~Simplified Chinese (by merzbau, Lewis Liu & Ghostcat)~
+          ~schinese~
+          ~SkieCost\translations\schinese\SkieCost.tra~
+
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+///////////////////// QUEST ////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+
+BEGIN @1 /* Skie: The Cost of One Girl's Soul - New quest for Baldur's Gate 2 EE */
+DESIGNATED 0
+LABEL L#-SKIECOST-MAINQUEST
+
+// Dodaj stan CD_STATE_NOTVALID
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~
+UNLESS ~CD_STATE_NOTVALID~ 
+
+//COPY DIRECTORIES
+
+COPY ~SkieCost\area~ ~override~
+COPY ~SkieCost\graphics~ ~override~
+COPY ~SkieCost\sounds~ ~override~
+COPY ~SkieCost\effects~ ~override~
+
+//COMPILE DIALOGUES
+
+COMPILE ~SkieCost\dialogues\quest.d~
+
+//COMPILE SCRIPTS
+
+COMPILE ~SkieCost\scripts\L#2SDCU1.baf~
+        ~SkieCost\scripts\L#2SDCU2.baf~
+        ~SkieCost\scripts\L#2SDNEM.baf~
+        ~SkieCost\scripts\L#SD01.baf~
+        ~SkieCost\scripts\L#2SDMES.baf~
+
+
+EXTEND_TOP ~AR0400.bcs~ ~SkieCost\scripts\AR0400.baf~
+EXTEND_TOP ~AR0602.bcs~ ~SkieCost\scripts\AR0602.baf~
+EXTEND_TOP ~AR0334.bcs~ ~SkieCost\scripts\AR0334.baf~
+EXTEND_TOP ~BALDUR.bcs~ ~SkieCost\scripts\BALDUR.baf~
+EXTEND_TOP ~IMOEN.bcs~ ~SkieCost\scripts\IMOEN.baf~
+
+//COPY CREATURES
+
+COPY ~SkieCost\creatures\l#2sdbon.cre~ ~override\l#2sdbon.cre~
+SAY NAME1 @2 /* Bontt */
+SAY NAME2 @2 /* Bontt */
+
+COPY ~SkieCost\creatures\l#2sdnem.cre~ ~override\l#2sdnem.cre~
+SAY NAME1 @3 /* Nem */
+SAY NAME2 @3 /* Nem */
+
+COPY ~SkieCost\creatures\l#2sdpyl.cre~ ~override\l#2sdpyl.cre~
+SAY NAME1 @4 /* Pyll */
+SAY NAME2 @4 /* Pyll */
+
+COPY ~SkieCost\creatures\l#2sdroi.cre~ ~override\l#2sdroi.cre~
+SAY NAME1 @5 /* Roi "Biggie" */
+SAY NAME2 @5 /* Roi "Biggie" */
+
+COPY ~SkieCost\creatures\l#2sdsou.cre~ ~override\l#2sdsou.cre~
+SAY NAME1 @6 /* Skie's Soul */
+SAY NAME2 @6 /* Skie's Soul */
+
+COPY ~SkieCost\creatures\l#2sdmo1.cre~ ~override\l#2sdmo1.cre~
+SAY NAME1 @7 /* Infernal Hatching */
+SAY NAME2 @7 /* Infernal Hatching */
+
+COPY ~SkieCost\creatures\l#2sdmo2.cre~ ~override\l#2sdmo2.cre~
+SAY NAME1 @8 /* Infernal Shadow */
+SAY NAME2 @8 /* Infernal Shadow */
+
+COPY ~SkieCost\creatures\l#2sdmo3.cre~ ~override\l#2sdmo3.cre~
+SAY NAME1 @9 /* Infernal Wyrm */
+SAY NAME2 @9 /* Infernal Wyrm */
+
+COPY ~SkieCost\creatures\l#2sdmo4.cre~ ~override\l#2sdmo4.cre~
+SAY NAME1 @10 /* Soultaker's Manifestation */
+SAY NAME2 @10 /* Soultaker's Manifestation */
+
+COPY ~SkieCost\creatures\L#2SDMES.cre~ ~override\L#2SDMES.cre~
+SAY NAME1 @11 /* Missini */
+SAY NAME2 @11 /* Missini */
+
+COPY_EXISTING ~brelm.cre~ ~override~
+ WRITE_EVALUATED_ASCII DEATHVAR ~BRELM~ #32
+
+//COPY ITEMS
+
+COPY ~SkieCost\items\L#2SDA1.itm~ ~override\L#2SDA1.itm~
+SAY NAME1 @12 /* Destroyed Soultaker */
+SAY NAME2 @12 /* Destroyed Soultaker */
+SAY DESC @13 /* This is the Soultaker dagger -- once in great condition, now shattered to pieces. This particular dagger was used to imprison the soul of Skie Silvershield. Merely having it on your person makes you feel uneasy for some reason. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illumination and still be so deathly black at its core, you do not know.
+Once every few seconds, small surges shimmer at the edge. Its dark magic must have became unstable because of its current state.
+
+Weight: 1 */
+
+COPY ~SkieCost\items\L#2SDAG1.itm~ ~override\L#2SDAG1.itm~
+SAY NAME1 @14 /* Soultaker: Bontt's Rage */
+SAY NAME2 @14 /* Soultaker: Bontt's Rage */
+SAY DESC @15 /* This dagger weighs heavily in your hand and is warm to the touch. Merely having it on your person makes you feel uneasy for some reason. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illumination and still be so deathly black at its core, you do not know.
+After it was used to steal the soul of Skie Silvershield, <CHARNAME> had to create an anomaly that allowed <PRO_HISHER> to replace <PRO_HISHER> companion's soul with the soul of swashbucker named Bontt. Even though the restored dagger does not have the old Soultaker's properties, it is still a very powerful weapon.
+Bontt's soul in the state of eternal slumber grants this item powerful properties.
+
+STATISTICS:
+
+This weapon is considered a +5 weapon
+
+Equipped abilities:
+ +1 attack per round
+ +1 Strength bonus
+
+Damage: 1d4 +3 (piercing)
+THAC0: +3
+Speed Factor: 2 
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1 */
+
+COPY ~SkieCost\items\L#2SDAG2.itm~ ~override\L#2SDAG2.itm~
+SAY NAME1 @16 /* Soultaker: Pyll's Remorse */
+SAY NAME2 @16 /* Soultaker: Pyll's Remorse */
+SAY DESC @17 /* This dagger weighs heavily in your hand and is warm to the touch. Merely having it on your person makes you feel uneasy for some reason. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illumination and still be so deathly black at its core, you do not know.
+After it was used to steal the soul of Skie Silvershield, <CHARNAME> had to create an anomaly that allowed <PRO_HISHER> to replace <PRO_HISHER> companion's soul with the soul of swashbucker named Bontt. Even though the restored dagger does not have the old Soultaker's properties, it is still a very powerful weapon.
+Pyll's soul in the state of eternal slumber grants this item powerful properties.
+
+STATISTICS:
+
+This weapon is considered a +5 weapon
+
+Equipped abilities:
+ Regenerates 1 HP each 3 seconds
+ Protection from Fear and confusion
+
+Damage: 1d4 +3 (piercing)
+THAC0: +3
+Speed Factor: 2 
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1 */
+
+COPY ~SkieCost\items\L#2SDAG3.itm~ ~override\L#2SDAG3.itm~
+SAY NAME1 @18 /* Soultaker: Roi's Fatherhood */
+SAY NAME2 @18 /* Soultaker: Roi's Fatherhood */
+SAY DESC @19 /* This dagger weighs heavily in your hand and is warm to the touch. Merely having it on your person makes you feel uneasy for some reason. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illumination and still be so deathly black at its core, you do not know.
+After it was used to steal the soul of Skie Silvershield, <CHARNAME> had to create an anomaly that allowed <PRO_HISHER> to replace <PRO_HISHER> companion's soul with the soul of swashbucker named Bontt. Even though the restored dagger does not have the old Soultaker's properties, it is still a very powerful weapon.
+Roi's soul in the state of eternal slumber grants this item powerful properties. His will to protect his only child may provide men special bonuses.
+
+STATISTICS:
+
+This weapon is considered a +5 weapon
+
+Equipped abilities:
+ +2 Armor Class bonus
+ 75% chance to cast Stoneskin upon Critical Hits (males only)
+
+Damage: 1d4 +3 (piercing)
+THAC0: +3
+Speed Factor: 2 
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+ 3 Strength
+
+Weight: 1 */
+
+COPY ~SkieCost\items\L#2SDREW.itm~ ~override\L#2SDREW.itm~
+SAY NAME1 @20 /* Cloak */
+SAY NAME2 @21 /* Cloak of Royal Eye */
+SAY DESC @22 /* This magic cloak is made of really soft material. The inner side of it is covered in magical symbols. It is said to not only protect from magic but also help those who specialize in distance weapons like bows. This specific cloak was given to <CHARNAME> by Dukes of Baldur's Gate for saving Skie Silvershield.
+
+STATISTICS:
+
+Equipped abilities:
+ +5% Magic Resistance
+ +4 THAC0 with missile weapons
+
+Weight: 3 */
+
+
+//JOURNAL
+
+ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+  ADD_JOURNAL @0 @1 @2 @3 @4 @5 @6 @7 @8 @9  USING ~SkieCost\Translations\%LANGUAGE%\BALDUR.TRA~
+END
+
+
+
+/*
+
+/* crossmod for quest */
+
+//SIR AJANTIS BG2
+
+ACTION_IF FILE_EXISTS_IN_GAME ~C#AJANB.dlg~ THEN BEGIN
+  PRINT @101 /* ~Sir Ajantis for BGII detected. Installing Ajantis interjections for Skie quest...~ */ 
+  COMPILE ~SkieCost/dialogues/crossmod/ajantis-quest.d~ USING ~SkieCost/translations/%s/ajantis.tra~
+END
+
+*/
+
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+//////////////////// THE NPC ///////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+
+
+
+BEGIN @23 /* Skie: The Cost of One Girl's Soul - Allow Skie to return as a joinable NPC */
+DESIGNATED 1
+REQUIRE_COMPONENT ~SkieCost/SkieCost.tp2~ ~0~ @24 /* This component requires previous component to work */
+LABEL L#-SKIECOST-NPCSKIE
+
+
+//////////////////////////////////////////////////////////////////////////////////
+////WILSON DOESN'T HAVE HIS BANTER FILE - THAT MAKES HIM SAD! LET'S CHANGE THAT///
+//////////////////////////////////////////////////////////////////////////////////
+
+
+ACTION_IF FILE_EXISTS_IN_GAME ~wilson.dlg~ THEN BEGIN
+ PRINT @25 /* Wilson detected - Wilson interdia.2da append - set Wilsons's banter file (BWILSON & BWILSO25) */
+    APPEND ~interdia.2da~ ~WILSON BWILSON BWILSO25~
+    UNLESS ~WILSON~
+   ACTION_IF NOT (FILE_EXISTS_IN_GAME ~BWILSON.dlg~) THEN BEGIN
+   COMPILE ~SkieCost/dialogues/BWILSONFix.d~
+  END
+   ACTION_IF NOT (FILE_EXISTS_IN_GAME ~BWILSO25.dlg~) THEN BEGIN
+   COMPILE ~SkieCost/dialogues/BWILSO25Fix.d~
+  END
+END
+
+///////////////////////////////////////////
+///////////////////////////////////////////
+
+
+ACTION_IF FILE_CONTAINS_EVALUATED (~specific.ids~ ~SILVERSHIELD~) BEGIN
+  OUTER_SET value = IDS_OF_SYMBOL (~specific~ ~SILVERSHIELD~)
+END ELSE BEGIN
+  LAF ADD_IDS_ENTRY INT_VAR minValue = 1 maxValue = 255 preferredValue = 200 STR_VAR idsFile = "specific.ids" identifier = "SILVERSHIELD" RET value END
+END
+
+///////////////////////////////////////////
+///////////////////////////////////////////
+
+DEFINE_PATCH_FUNCTION ~GET_2DA_ROW~
+	INT_VAR
+		starting_row=0
+		numcolumns=0
+		match_column=0
+		found_it=0
+	STR_VAR
+		match=~DEFA~
+	RET
+		numcols
+		matched
+BEGIN
+		COUNT_2DA_ROWS numcolumns numrows
+		FOR (i = starting_row; i < numrows; ++i) BEGIN
+			READ_2DA_ENTRY i match_column numcolumns string_to_match
+			PATCH_IF (~%string_to_match%~ STRING_EQUAL_CASE ~%match%~) BEGIN
+				matched = i
+				found_it = 1
+				i = numrows
+
+			END
+		END
+		numcols = numcolumns
+		PATCH_IF (found_it = 0) BEGIN
+			PATCH_FAIL ~GET_2DA_ROW: Could not find a row that contains %match% in column %match_column%.~
+		END
+END
+	
+ADD_MUSIC ~L#2SDSK~ ~%MOD_FOLDER%/music-skie/L#2SDSK.mus~
+COPY ~%MOD_FOLDER%/music-skie/L#2SDSKA.acm~ ~MUSIC/L#2SDSK/L#2SDSKA.acm~
+
+COPY_EXISTING ~SONGLIST.2da~ ~override~
+	LPF GET_2DA_ROW INT_VAR numcolumns=3 match_column=2 STR_VAR match=~L#2SDSK.mus~ RET therow=matched END
+	READ_2DA_ENTRY therow 0 3 ~song~
+
+	OUTER_SET L#2SDSK = song
+
+///////////////////////////////////////////
+///////////////////////////////////////////
+
+//SKIE 
+
+OUTER_SET skie_name = RESOLVE_STR_REF(@26)
+
+COPY ~SkieCost/creatures/l#2sdski.cre~ ~override~
+SAY NAME1 @26 /* Skie */
+SAY NAME2 @26 /* Skie */
+SAY BIO @27 /* When asked about her past, SKIE bubbles that she is the daughter of Entar Silvershield, one of the Grand Dukes of Baldur's Gate. Her admittedly sheltered life has consisted mostly of learning ballet, history, and languages. Being exceptionally agile, she has become a very proficient dancer, though this natural dexterity has mainly allowed her to better sneak off on sojourns away from the estate.
+She says she finds the nastier areas of Baldur's Gate exciting, though she seems naive about the dangers. On one of her escapades she met up with the debonair Eldoth, but those two parted ways not much later. After meeting <CHARNAME> for the first time, she decided that what she truly wants is the life of an adventurer. She joined Flaming Fist and joined you in your fight against Caelar and her Crusade. Because of Irenicus, the two of you fell into trouble: she was stabbed by the Soultaker and you were accused of murdering her. Luckily, her soul was restored and you were freed of all accusations. */
+
+WRITE_BYTE 0x274 %value%
+
+  SAY MORALE @28 /* You've got to get me out of here. I'm dying! */
+  SAY HAPPY @29 /* Have you been licking a whetstone? Your tongue's sharper than ever! */
+  SAY UNHAPPY_ANNOYED @30 /* Daddy would never allow it. */
+  SAY UNHAPPY_SERIOUS @31 /* Don't you want to hear what I have to say? */
+  SAY UNHAPPY_BREAKING_POINT @30 /* Daddy would never allow it. */
+  SAY LEADER @32 /* Not everyone is Duke Silvershield's only child! */
+  SAY TIRED @33 /* I got TWO blisters. Who lives like this? */
+  SAY BORED @34 /* It's stupid. */
+  SAY BATTLE_CRY1 @35 /* I'll give you a reason... */
+  SAY BATTLE_CRY2 @35 /* I'll give you a reason... */
+  SAY BATTLE_CRY3 @35 /* I'll give you a reason... */
+  SAY BATTLE_CRY4 @35 /* I'll give you a reason... */
+  SAY BATTLE_CRY5 @35 /* I'll give you a reason... */
+  SAY DAMAGE @36 /*  */
+  SAY DYING @37 /*  */
+  SAY HURT @38 /* Help me, please! They're going to kill me! */
+  SAY AREA_FOREST ~~ []
+  SAY AREA_CITY @40 /* They don't even know who I am. */
+  SAY AREA_DUNGEON ~~ []
+  SAY AREA_DAY ~~ []
+  SAY AREA_NIGHT ~~ []
+  SAY SELECT_COMMON1 @41 /* What do you want now? */
+  SAY SELECT_COMMON2 @42 /* Did you just say something? */
+  SAY SELECT_COMMON3 @43 /* I want to do something great with my life! */
+  SAY SELECT_COMMON4 @44 /* We did great things together! */
+  SAY SELECT_COMMON5 @45 /* Life as a noble is boring and stupid. */
+  SAY SELECT_COMMON6 @46 /* Everyone expects ME to sit safely by the fire and polish my boots. */
+  SAY SELECT_ACTION1 @47 /* Yeah. */
+  SAY SELECT_ACTION2 @48 /* I know! */
+  SAY SELECT_ACTION3 @49 /* Dull. Dull. Dull. */
+  SAY SELECT_ACTION4 @50 /* Of course! */
+  SAY SELECT_ACTION5 @51 /* Really? I mean, yeah, of course. */
+  SAY SELECT_ACTION6 @52 /* All right! */
+  SAY SELECT_ACTION7 @50 /* Of course! */
+  SAY CRITICAL_HIT @53 /* Oh, ha ha ha! */
+  SAY CRITICAL_MISS ~~ []
+  SAY TARGET_IMMUNE ~~ []
+  SAY INVENTORY_FULL ~~ []
+  SAY SELECT_RARE1 @54 /* When my dad was my age, he was already a hero. No one thinks I can be a hero too, but they're wrong. */
+  SAY SELECT_RARE2 @55 /* I'm taking the initiative. */
+  SAY SPELL_DISRUPTED @56 /* Leave me alone! */
+  SAY SET_A_TRAP @57 /* I did good...? */
+  SAY HIDDEN_IN_SHADOWS @58 /* It's our secret! */
+  SAY PICKED_POCKET @59 /* Don't tell daddy about this... */
+  SAY REACT_TO_DIE_GENERAL ~~ []
+ 
+COPY ~SkieCost/creatures/l#2sd25.cre~ ~override~
+SAY NAME1 @26 /* Skie */
+SAY NAME2 @26 /* Skie */
+SAY BIO @60 /* When asked about her past, SKIE bubbles that she is the daughter of Entar Silvershield, one of the Grand Dukes of Baldur's Gate. Her admittedly sheltered life has consisted mostly of learning ballet, history, and languages. Being exceptionally agile, she has become a very proficient dancer, though this natural dexterity has mainly allowed her to better sneak off on sojourns away from the estate.
+She says she finds the nastier areas of Baldur's Gate exciting, though she seems naive about the dangers. On one of her escapades she met up with the debonair Eldoth, but those two parted ways not much later. After meeting <CHARNAME> for the first time, she decided that what she truly wants, is a life of an adventurer. She joined Flaming Fist and joined you in your fight against Caelar and her Crusade. Because of Irenicus, the two of you fell into trouble: she was stabbed by the Soultaker and you were accused of murdering her. Luckily, her soul was restored and you were freed of all accusations. */
+
+WRITE_BYTE 0x274 %value%
+
+  SAY MORALE @28 /* You've got to get me out of here. I'm dying! */
+  SAY HAPPY @29 /* Have you been licking a whetstone? Your tongue's sharper than ever! */
+  SAY UNHAPPY_ANNOYED @30 /* Daddy would never allow it. */
+  SAY UNHAPPY_SERIOUS @31 /* Don't you want to hear what I have to say? */
+  SAY UNHAPPY_BREAKING_POINT @30 /* Daddy would never allow it. */
+  SAY LEADER @32 /* Not everyone is Duke Silvershield's only child! */
+  SAY TIRED @33 /* I got TWO blisters. Who lives like this? */
+  SAY BORED @34 /* It's stupid. */
+  SAY BATTLE_CRY1 @35 /* I'll give you a reason... */
+  SAY BATTLE_CRY2 @35 /* I'll give you a reason... */
+  SAY BATTLE_CRY3 @35 /* I'll give you a reason... */
+  SAY BATTLE_CRY4 @35 /* I'll give you a reason... */
+  SAY BATTLE_CRY5 @35 /* I'll give you a reason... */
+  SAY DAMAGE @36 /*  */
+  SAY DYING @37 /*  */
+  SAY HURT @38 /* Help me, please! They're going to kill me! */
+  SAY AREA_FOREST ~~ []
+  SAY AREA_CITY @40 /* They don't even know who I am. */
+  SAY AREA_DUNGEON ~~ []
+  SAY AREA_DAY ~~ []
+  SAY AREA_NIGHT ~~ []
+  SAY SELECT_COMMON1 @41 /* What do you want now? */
+  SAY SELECT_COMMON2 @42 /* Did you just say something? */
+  SAY SELECT_COMMON3 @43 /* I want to do something great with my life! */
+  SAY SELECT_COMMON4 @44 /* We did great things together! */
+  SAY SELECT_COMMON5 @45 /* Life as a noble is boring and stupid. */
+  SAY SELECT_COMMON6 @46 /* Everyone expects ME to sit safely by the fire and polish my boots. */
+  SAY SELECT_ACTION1 @47 /* Yeah. */
+  SAY SELECT_ACTION2 @48 /* I know! */
+  SAY SELECT_ACTION3 @49 /* Dull. Dull. Dull. */
+  SAY SELECT_ACTION4 @50 /* Of course! */
+  SAY SELECT_ACTION5 @51 /* Really? I mean, yeah, of course. */
+  SAY SELECT_ACTION6 @52 /* All right! */
+  SAY SELECT_ACTION7 @50 /* Of course! */
+  SAY CRITICAL_HIT @53 /* Oh, ha ha ha! */
+  SAY CRITICAL_MISS ~~ []
+  SAY TARGET_IMMUNE ~~ []
+  SAY INVENTORY_FULL ~~ []
+  SAY SELECT_RARE1 @54 /* When my dad was my age, he was already a hero. No one thinks I can be a hero too, but they're wrong. */
+  SAY SELECT_RARE2 @55 /* I'm taking the initiative. */
+  SAY SPELL_DISRUPTED @56 /* Leave me alone! */
+  SAY SET_A_TRAP @57 /* I did good...? */
+  SAY HIDDEN_IN_SHADOWS @58 /* It's our secret! */
+  SAY PICKED_POCKET @59 /* Don't tell daddy about this... */
+  SAY REACT_TO_DIE_GENERAL ~~ []
+ 
+APPEND ~pdialog.2da~
+  ~l#2sdskie l#2sdskP l#2sdskJ l#2sdskD l#2sd25P l#2sd25J l#2sd25D l#2sd25~
+UNLESS ~l#2sdskie~
+
+APPEND ~interdia.2da~
+
+~l#2sdskie l#2sdskB l#2sd25B~
+
+
+//CREATURES (SKIE)
+
+COPY ~SkieCost/creatures/l#2sdeld.cre~ ~override~
+SAY NAME1 @61 /* Eldoth */
+SAY NAME2 @61 /* Eldoth */
+  SAY BATTLE_CRY1 @62 /* If we must. */
+  SAY SELECT_COMMON1 @63 /* You're so dull. */
+  SAY SELECT_COMMON2 @64 /* What's your worry? */
+  SAY SELECT_COMMON3 @65 /* Don't bore me. */
+  SAY DAMAGE @66 /*  */
+  SAY DYING @67 /*  */
+
+COPY ~SkieCost/creatures/l#2sdpir.cre~ ~override~
+SAY NAME1 @68 /* Pirate */
+SAY NAME2 @68 /* Pirate */
+  
+//DIALOGUES (SKIE)
+
+COMPILE ~SkieCost\dialogues\skie.d~
+
+
+//SPELLS (SKIE)
+
+COPY ~SkieCost/spells/l#2sdsja.spl~ ~override~
+SAY NAME1 ~~
+SAY NAME2 ~~
+
+COPY ~SkieCost/spells/l#2sdsj2.spl~ ~override~
+SAY NAME1 ~~
+SAY NAME2 ~~
+
+//SCRIPTS (SKIE)
+
+COMPILE ~SkieCost\scripts\l#2sdski.baf~ EVAL
+COMPILE ~SkieCost\scripts\l#2sdskd.baf~
+COMPILE ~SkieCost\scripts\l#2sdeld.baf~
+COMPILE ~SkieCost\scripts\l#2sd25.baf~  EVAL
+
+EXTEND_TOP ~BALDUR.bcs~ ~SkieCost\scripts\BALDUR-NPC.baf~
+EXTEND_TOP ~AR1602.bcs~ ~SkieCost\scripts\AR1602.baf~
+EXTEND_TOP ~AR1600.bcs~ ~SkieCost\scripts\AR1600.baf~
+EXTEND_TOP ~AR6200.bcs~ ~SkieCost\scripts\AR6200.baf~
+EXTEND_BOTTOM ~OHDGORGE.bcs~ ~SkieCost\scripts\OHDGORGE_S.baf~
+
+
+//TOB TRANSITION
+
+ACTION_IF GAME_IS ~eet~ BEGIN
+INCLUDE ~EET/other/EET_functions.tph~
+LAF ~EET_NPC_TRANSITION~
+INT_VAR
+type = 2
+default_ToB = 1
+clean_ToB = 1
+STR_VAR
+dv = "l#2sdskie"
+override_SoA = "L#2SDSKI"
+override_ToB = "L#2SD25"
+dialog_ToB = "L#2SD25"
+cre_ToB = "L#2SD25"
+traFile = EVAL "SkieCost/translations/%LANGUAGE%/Skie.TRA"
+string = "@49"
+stringPosDV = "Sharteel"
+clean_ToB_DV = "Skie"
+END
+END ELSE BEGIN
+COMPILE ~SkieCost\dialogues\FateSp.d~ USING ~SkieCost/translations/%LANGUAGE%/Skie.TRA~
+END
+
+
+//PORTRAIT (SKIE)
+
+COPY ~SkieCost\portrait~ ~override~
+
+
+//ITEMS (SKIE)
+
+COPY ~SkieCost\items\L#2SDLE.itm~ ~override\L#2SDLE1.itm~
+SAY NAME1 @69 /* Letter from Entar */
+SAY NAME2 @69 /* Letter from Entar */
+SAY DESC @70 /* Hero of Baldur's Gate,
+
+If you are reading this letter, that means my little Skie decided to stay by your side. You were judged unfairly and I hope to never make such a mistake again. Even though we banished you, you saved her life. I'm not surprised she decided to stay with you. Please take care of my precious girl. 
+
+Duke Entar Silvershield
+
+
+Weight: 0 */
+
+COPY ~SkieCost\items\L#2SDLE.itm~ ~override\L#2SDLE2.itm~
+SAY NAME1 @69 /* Letter from Entar */
+SAY NAME2 @69 /* Letter from Entar */
+SAY DESC @71 /* To <CHARNAME>
+
+If you are reading this letter, that means my little Skie decided to stay by your side. I am not going to lie -- I hoped she would return, but even though you are not without flaws I must accept her decision. Take care of her and know if something happens to her again, you will be the one responsible for that. 
+
+Duke Entar Silvershield
+
+
+Weight: 0 */
+
+COPY ~SkieCost\items\L#2SDSSS.itm~ ~override\L#2SDSSS.itm~
+SAY NAME1 @72 /* Belt */
+SAY NAME2 @73 /* Belt "Woman's Independence" */
+SAY DESC @74 /* This powerful black belt is a gift from Entar Silvershield. It is enchanted with powerful magic that may protect its wearer. Gossips says that original creator of that belt made it for his beloved sister, who decided to leave her home and become an adventurer.
+
+STATISTICS:
+
+Equipped abilities:
+ +1 Armor Class
+ +1 Constitution (woman only)
+
+Weight: 2 */
+
+COPY ~SkieCost\items\L#2SDE1.itm~ ~override\L#2SDE1.itm~
+SAY NAME1 @75 /* Studded Leather Armor */
+SAY NAME2 @76 /* Studded Leather 'Dirty Trick' */
+SAY DESC @77 /* This studded leather armor belonged to Eldoth Kron -- a vicious bard who betrayed Skie Silvershield. It smells of alcohol and sweat, which does not surprise you greatly. The armor was enhanced with some magic.
+
+STATISTICS:
+
+Equipped abilities:
+ Allows arcane spellcasting
+ Wearer may memorize 1 additional arcane spell of 1st level
+
+Armor Class: 6 (4 vs. slashing, 5 vs. piercing and missile)
+Requires:
+ 6 Strength
+
+Weight: 15 */
+
+COPY ~SkieCost\items\L#2SDE2.itm~ ~override\L#2SDE2.itm~
+SAY NAME1 @78 /* Shortbow */
+SAY NAME2 @79 /* Eldoth's Shortbow */
+SAY DESC @80 /* That magic shortbow belonged to Eldoth Kron, an infamous bard. Eldoth was famous for creating his poisoned arrows. Later, along with a mage he worked for once, this bow was created. It is said to poison every arrow that touches the string of this weapon.
+
+STATISTICS:
+
+Equipped abilities:
+ Arrows used with this shortbow deal 1 poison damage each second (lasts 3 seconds; saving throw vs. poison to avoid the effect)
+
+THAC0: +2
+Speed Factor: 4
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+ 3 Strength
+
+Weight: 2 */
+
+COPY ~SkieCost\items\L#2SDBTS.itm~ ~override\L#2SDBTS.itm~
+SAY NAME1 @81 /* Boots */
+SAY NAME2 @82 /* The Hot Cheetah */
+SAY DESC @83 /* These shoes are nothing else but enhanced Paws of the Cheetah. Someone must have worked on the item and perhaps... dyed them red. Their modified magic not only grand wearer great speed, but also protect him or her from cold.
+This pair of shoes was a gift to <CHARNAME> from Skie Silvershield.
+
+STATISTICS:
+
+Equipped abilities:
+ Doubles movement rate
+ 75% Cold Resistance bonus
+
+Weight: 4 */
+
+COPY ~SkieCost\items\L#2SDSJA.itm~ ~override\L#2SDSJA.itm~
+SAY NAME1 @130 
+SAY NAME2 @131 
+SAY DESC @132
+WRITE_LONG 0x1f6 %skie_name% 
+
+
+//EPILOGUES
+
+COPY ~SkieCost/L#2SDEp.2da~ ~override/L#2SDEp1.2da~
+
+        REPLACE_TEXTUALLY ~PORTRAIT~ ~L#SDSkiL~ 
+
+        REPLACE 99999 @84 /* After all her adventures with the Child of Bhaal, Skie Silvershield finally returned to Baldur's Gate. She told everything to her father: about the adventures, about Irenicus, about the Five, about Saradush, and everything else. He believed her every tale. She decided to help her father so Baldur's Gate was safe. She even worked again with the Flaming Fist a couple of times. But she did not give up the life of an adventurer entirely. She became an agent of Baldur's Gate and would be sent on special missions -- no less dangerous than some missions she help <CHARNAME> with.
+She would never forget any single great thing she did with the Child of Bhaal and wherever she would go, she would speak of <PRO_HIMHER> fondly and tell men and women who never heard of <PRO_HIMHER> the greatest story: The Tale of the Hero of Baldur's Gate. */
+
+COPY ~SkieCost/L#2SDEp.2da~ ~override/L#2SDEp2.2da~
+
+        REPLACE_TEXTUALLY ~PORTRAIT~ ~L#SDSkiL~ 
+
+        REPLACE 99999 @85 /* After all her adventures with the Child of Bhaal, Skie Silvershield finally returned to Baldur's Gate. She told everything to her father: about the adventures, about Irenicus, about the Five, about Saradush, and everything else. He believed her every tale. 
+Even though Skie Silvershield become much more mature, she never found the reason to be like her father. She wanted the life of an adventurer, not the the one of Baldur's Gate protector. Instead she would leave on dangerous missions. She would help the Flaming Fist sometimes, but not because she wanted but rather because she wanted to aid her father, who wasn't becoming any younger.
+Finally she would start her own business, inspired by the Adventurer's Mart: a shop, Skie's Emporium, where she would sell all the magical trinkets she found on her adventures.
+She would never forget about her adventures with the Child of Bhaal. Every now and then she would sit and smile to herself, thinking about every single stupid thing they have done together. */
+
+
+
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+/////////////////// THE PIDs ///////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+BEGIN @220 // Skie: The Cost of One Girl's Soul - Add Player-Initiated Dialogue (PID) for Skie
+DESIGNATED 2
+REQUIRE_COMPONENT ~SkieCost/SkieCost.tp2~ ~1~ @24 /* This component requires previous component to work */
+LABEL L#-SKIECOST-NPCSKIEPIDS
+
+INCLUDE ~SkieCost/lib/PIDs.tpa~
+
+
+  
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+//////////////////// EDDARD ////////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+BEGIN @221 // Skie: The Cost of One Girl's Soul - The Return of Eddard Silvershield (quest & a joinable NPC)
+DESIGNATED 3
+REQUIRE_COMPONENT ~SkieCost/SkieCost.tp2~ ~1~ @24 /* This component requires previous component to work */
+LABEL L#-SKIECOST-NPCEDDARD
+
+INCLUDE ~SkieCost/lib/PuppyAnimation.tph~
+INCLUDE ~SkieCost/lib/kit.tpa~
+INCLUDE ~SkieCost/lib/EddardInstall.tpa~
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+/////////////// THE PIDs - ED //////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+BEGIN @222 // Skie: The Cost of One Girl's Soul - Add Player-Initiated Dialogue (PID) for Eddard
+DESIGNATED 4
+REQUIRE_COMPONENT ~SkieCost/SkieCost.tp2~ ~3~ @24 /* This component requires previous component to work */
+LABEL L#-SKIECOST-NPCEDDARDPIDS
+
+INCLUDE ~SkieCost/lib/PIDs-ED.tpa~
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+/////////////////// THE SHOP ///////////////////
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+
+BEGIN @200
+DESIGNATED 5
+LABEL L#-SKIECOST-SHOP
+
+//CREATURE
+
+COPY ~SkieCost/creatures/l#2sdsh.cre~ ~override/l#2sdsh.cre~
+SAY NAME1 @201
+SAY NAME2 @201
+
+//STORE
+
+COPY ~SkieCost/store/l#2sdsh.sto~ ~override/l#2sdsh.sto~
+SAY 0xc @201
+
+//Dialogues
+
+COMPILE ~SkieCost/dialogues/shop.d~
+
+//Scripts
+
+EXTEND_TOP ~AR0700.bcs~ ~SkieCost\scripts\AR0700.baf~
+
+//ITEMS
+
+COPY ~SkieCost/items/L#2SDS01.itm~ ~override~
+SAY NAME1 @202
+SAY NAME2 @202
+SAY DESC @203
+
+COPY ~SkieCost/items/L#2SDS02.itm~ ~override~
+SAY NAME1 @204
+SAY NAME2 @204
+SAY DESC @205
+
+
+COPY ~SkieCost/items/L#2SDS03.itm~ ~override~
+SAY NAME1 @206
+SAY NAME2 @206
+SAY DESC @207
+
+
+COPY ~SkieCost/items/L#2SDS04.itm~ ~override~
+SAY NAME1 @208
+SAY NAME2 @208
+SAY DESC @209
+
+
+COPY ~SkieCost/items/L#2SDS05.itm~ ~override~
+SAY NAME1 @210
+SAY NAME2 @210
+SAY DESC @211
+
+COPY ~SkieCost/items/L#2SDS06.itm~ ~override~
+SAY NAME1 @212
+SAY NAME2 @212
+SAY DESC @213 
+
+COPY ~SkieCost/items/L#2SDS07.itm~ ~override~
+SAY NAME1 @214
+SAY NAME2 @214
+SAY DESC @215
+
+COPY ~SkieCost/items/L#2SDS08.itm~ ~override~
+SAY NAME1 @216
+SAY NAME2 @217
+SAY DESC @218

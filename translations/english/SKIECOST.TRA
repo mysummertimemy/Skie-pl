@@ -1,0 +1,431 @@
+
+@1 = ~Skie: The Cost of One Girl's Soul - New quest for Baldur's Gate 2 EE~
+@2 = ~Bontt~
+@3 = ~Nem~
+@4 = ~Pyll~
+@5 = ~Roi "Biggie"~
+@6 = ~Skie's Soul~
+@7 = ~Infernal Hatchling~
+@8 = ~Infernal Shadow~
+@9 = ~Infernal Wyrm~
+@10 = ~Soultaker's Manifestation~
+@11 = ~Missini~
+@12 = ~Destroyed Soultaker~
+@13 = ~This is the Soultaker dagger—once in great condition, now shattered to pieces. This particular dagger was used to imprison the soul of Skie Silvershield. Merely having it on your person makes you feel uneasy for some reason. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illumination and still be so deathly black at its core, you do not know.
+Once every few seconds, small surges shimmer at the edge. The dagger's dark magic must have become unstable because of its current state.
+
+Weight: 1
+~
+
+@14 = ~Soultaker: Bontt's Rage~
+@15 = ~This dagger weighs heavily in your hand and is warm to the touch. Merely having it on your person makes you feel uneasy for some reason. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illumination and still be so deathly black at its core, you do not know.
+After the dagger was used to steal the soul of Skie Silvershield, <CHARNAME> had to create an anomaly that allowed <PRO_HISHER> to replace <PRO_HISHER> companion's soul with the soul of a swashbuckler named Bontt. Even though the restored dagger does not have the old Soultaker's properties, it is still a very powerful weapon.
+Bontt's soul in the state of eternal slumber grants this item new powers.
+
+STATISTICS:
+
+Equipped abilities:
+– Attacks per round: +1
+– Strength: +1
+
+Combat abilities:
+– Strikes as a +5 weapon
+
+THAC0: +3
+Damage: 1d4+3 (piercing)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+3 Strength
+
+Weight: 1
+~
+
+@16 = ~Soultaker: Pyll's Remorse~
+@17 = ~This dagger weighs heavily in your hand and is warm to the touch. Merely having it on your person makes you feel uneasy for some reason. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illumination and still be so deathly black at its core, you do not know.
+After the dagger was used to steal the soul of Skie Silvershield, <CHARNAME> had to create an anomaly that allowed <PRO_HISHER> to replace <PRO_HISHER> companion's soul with the soul of a woman named Pyll. Even though the restored dagger does not have the old Soultaker's properties, it is still a very powerful weapon.
+Pyll's soul in the state of eternal slumber grants this item new powers.
+
+STATISTICS:
+
+Equipped abilities:
+– Regeneration: 1 Hit Point each 3 seconds
+– Immunity to fear and confusion
+
+Combat abilities:
+– Strikes as a +5 weapon
+
+THAC0: +3
+Damage: 1d4+3 (piercing)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+3 Strength
+
+Weight: 1
+~
+
+@18 = ~Soultaker: Roi's Fatherhood~
+@19 = ~This dagger weighs heavily in your hand and is warm to the touch. Merely having it on your person makes you feel uneasy for some reason. The gem mounted in the hilt seems to have an inner light of some sort, though how it can have such illumination and still be so deathly black at its core, you do not know.
+After the dagger was used to steal the soul of Skie Silvershield, <CHARNAME> had to create an anomaly that allowed <PRO_HISHER> to replace <PRO_HISHER> companion's soul with the soul of a thief named Roi "Biggie". Even though the restored dagger does not have the old Soultaker's properties, it is still a very powerful weapon.
+Roi's soul in the state of eternal slumber grants this item new powers. Moreover, his will to protect his only child may grant special bonuses that apply only to men.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+
+Combat abilities:
+– Strikes as a +5 weapon
+– 75% chance to cast Stoneskin upon critical hits (males only)
+
+THAC0: +3
+Damage: 1d4+3 (piercing)
+Speed Factor: 2
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+3 Strength
+
+Weight: 1
+~
+
+@20 = ~Cloak~
+@21 = ~Cloak of the Royal Eye~
+@22 = ~This magic cloak is made of a very soft material. Its inner side is covered with magical symbols. Reportedly, it does not only protect the wearer from harmful magic but also helps those who specialize in distance weapons like bows. The Dukes of Baldur's Gate gifted this cloak to <CHARNAME> as a reward for saving Skie Silvershield.
+
+STATISTICS:
+
+Equipped abilities:
+– Magic Resistance: +5%
+– THAC0: +4 with missile weapons
+
+Weight: 3
+~
+
+@23 = ~Skie: The Cost of One Girl's Soul - Allow Skie to return as a joinable NPC~
+@24 = ~This component requires the previous component to work~
+@25 = ~Wilson detected - Wilson interdia.2da append - set Wilsons's banter file (BWILSON & BWILSO25)~
+@26 = ~Skie~
+@27 = ~When asked about her past, SKIE bubbles that she is the daughter of Entar Silvershield, one of the Grand Dukes of Baldur's Gate. Her admittedly sheltered life has consisted mostly of learning ballet, history, and languages. Being exceptionally agile, she has become a very proficient dancer, though this natural dexterity has mainly allowed her to better sneak off on sojourns away from the estate.
+She says she finds the nastier areas of Baldur's Gate exciting, though she seems naive about the dangers. On one of her escapades, she met up with the debonair Eldoth, but those two parted ways not much later. After meeting <CHARNAME> for the first time, she decided that what she truly wanted was the life of an adventurer. She joined the Flaming Fist to support the fight against Caelar Argent and her crusade. Later, both of your lives were ruined by Irenicus: Skie was stabbed with the Soultaker Dagger, and you were accused of murdering her. Luckily, her soul was restored, and you were freed of all accusations.~
+@28 = ~You've got to get me out of here. I'm dying!~ [L#2SD043]
+@29 = ~Have you been licking a whetstone? Your tongue's sharper than ever!~ [L#2SD008]
+@30 = ~Daddy would never allow it.~ [L#2SD013]
+@31 = ~Don't you want to hear what I have to say?~ [L#2SD012]
+@32 = ~Not everyone is Duke Silvershield's only child!~ [L#2SD019]
+@33 = ~I got TWO blisters. Who lives like this?~ [L#2SD039]
+@34 = ~It's stupid.~ [L#2SD031]
+@35 = ~I'll give you a reason...~ [L#2SD040]
+@36 = ~~ [L#2SD046]
+@37 = ~~ [L#2SD047]
+@38 = ~Help me, please! They're going to kill me!~ [L#2SD029]
+@39 = ~~ []
+@40 = ~They don't even know who I am.~ [L#2SD032]
+@41 = ~What do you want now?~ [L#2SD004]
+@42 = ~Did you just say something?~ [L#2SD027]
+@43 = ~I want to do something great with my life!~ [L#2SD015]
+@44 = ~We did great things together!~ [L#2SD023]
+@45 = ~Life as a noble is boring and stupid.~ [L#2SD014]
+@46 = ~Everyone expects ME to sit safely by the fire and polish my boots.~ [L#2SD030]
+@47 = ~Yeah.~ [L#2SD010]
+@48 = ~I know!~ [L#2SD016]
+@49 = ~Dull. Dull. Dull.~ [L#2SD025]
+@50 = ~Of course!~ [L#2SD020]
+@51 = ~Really? I mean, yeah, of course.~ [L#2SD035]
+@52 = ~All right!~ [L#2SD042]
+@53 = ~Oh, ha ha ha!~ [L#2SD007]
+@54 = ~When my dad was my age, he was already a hero. No one thinks I can be a hero too, but they're wrong.~ [L#2SD036]
+@55 = ~I'm taking the initiative.~ [L#2SD038]
+@56 = ~Leave me alone!~ [L#2SD028]
+@57 = ~I did good...?~ [L#2SD034]
+@58 = ~It's our secret!~ [L#2SD021]
+@59 = ~Don't tell daddy about this...~ [L#2SD018]
+@60 = ~When asked about her past, SKIE bubbles that she is the daughter of Entar Silvershield, one of the Grand Dukes of Baldur's Gate. Her admittedly sheltered life has consisted mostly of learning ballet, history, and languages. Being exceptionally agile, she has become a very proficient dancer, though this natural dexterity has mainly allowed her to better sneak off on sojourns away from the estate.
+She says she finds the nastier areas of Baldur's Gate exciting, though she seems naive about the dangers. On one of her escapades she met up with the debonair Eldoth, but those two parted ways not much later. After meeting <CHARNAME> for the first time, she decided that what she truly wanted was the life of an adventurer. She joined the Flaming Fist to support the fight against Caelar Argent and her crusade. Later, both of your lives were ruined by Irenicus: Skie was stabbed with the Soultaker Dagger, and you were accused of murdering her. Luckily, her soul was restored, and you were freed of all accusations.~
+@61 = ~Eldoth~
+@62 = ~If we must.~ [L#2SDE1]
+@63 = ~You're so dull.~ [L#2SDE2]
+@64 = ~What's your worry?~ [L#2SDE3]
+@65 = ~Don't bore me.~ [L#2SDE4]
+@66 = ~~ [L#2SDE5]
+@67 = ~~ [L#2SDE6]
+@68 = ~Pirate~
+@69 = ~Letter from Entar~
+@70 = ~Hero of Baldur's Gate,
+
+If you are reading this letter, it means my little Skie decided to stay by your side. We parted ways in chaos, an ending many would attribute to your... nature. Our relations weren't always easy, we both know it, <CHARNAME>. But after all, we are two different beings, each with their own burden to carry.. Yet despite your own troubles, you saved Skie's life. I'm not surprised she decided to stay with you. Please take care of my precious girl.
+
+Duke Entar Silvershield
+
+Weight: 0
+~
+
+@71 = ~To <CHARNAME>
+
+If you are reading this letter, it means my little Skie decided to stay by your side. I am not going to lie—I hoped she would have returned, but even though you are not without flaws, I must accept her decision. Take care of her and know that if something happens to her again, you will be the one responsible for it.
+
+Duke Entar Silvershield
+
+
+Weight: 0~
+@72 = ~Belt~
+@73 = ~Woman's Independence~
+@74 = ~This powerful black belt is a gift from Entar Silvershield. It is enchanted with powerful magic that may protect its wearer. Rumor has it that the creator of the belt made it for his beloved sister who decided to leave her home and become an adventurer.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Constitution: +1 (females only)
+
+Weight: 2
+~
+
+@75 = ~Studded Leather Armor~
+@76 = ~Dirty Trick~
+@77 = ~This studded leather armor used to belong to Eldoth Kron—a vicious bard who betrayed Skie Silvershield. It smells of alcohol and sweat, which does not surprise you greatly. The armor has been enchanted with some magic.
+
+STATISTICS:
+
+Equipped abilities:
+– Allows arcane spellcasting
+– Can memorize 1 extra arcane spell of 1st-level
+
+Armor Class: 6 (4 vs. slashing, 5 vs. piercing and missile)
+Requires:
+6 Strength
+
+Weight: 15
+~
+
+@78 = ~Shortbow~
+@79 = ~Eldoth's Shortbow~
+@80 = ~That magic shortbow used to belong to Eldoth Kron, an infamous bard. Eldoth was known for creating poisoned arrows. Later, together with a mage he worked for once, he created this special bow. The weapon is said to poison every arrow that touches its string.
+
+STATISTICS:
+
+Equipped abilities:
+– Target suffers 1 poison damage per second for 3 seconds (Save vs. Death negates)
+
+THAC0: +2
+Speed Factor: 4
+Proficiency Type: Shortbow
+Type: Two-handed
+Requires:
+3 Strength
+
+Weight: 2
+~
+
+@81 = ~Boots~
+@82 = ~The Hot Cheetah~
+@83 = ~These boots are nothing else but enhanced Paws of the Cheetah. Someone must have worked on them and perhaps... dyed them red. Their modified magic not only grants the wearer great speed but also protects him or her from cold.
+This pair of boots was a gift to <CHARNAME> from Skie Silvershield.
+
+STATISTICS:
+
+Equipped abilities:
+– Doubles movement rate
+– Cold Resistance: +75%
+
+Weight: 4
+~
+
+@84 = ~After all her travels with the Child of Bhaal, Skie Silvershield finally returned to Baldur's Gate. She told her father the entire story: about the adventures, Irenicus, the Five, Saradush, and everything else. He believed her every word. Skie decided to help her father keep Baldur's Gate safe. She even worked again with the Flaming Fist a couple of times. But she did not give up the life of an adventurer entirely. Skie became an agent of Baldur's Gate and was sent on special missions—no less dangerous than some quests she helped <CHARNAME> with.
+She would never forget a single great thing she did with the Child of Bhaal, and wherever she went, she spoke of <PRO_HIMHER> fondly. To men and women who never heard of <CHARNAME> Skie always told the greatest story: The Tale of the Hero of Baldur's Gate.~
+@85 = ~After all her travels with the Child of Bhaal, Skie Silvershield finally returned to Baldur's Gate. She told her father the entire story: about the adventures, Irenicus, the Five, Saradush, and everything else. He believed her every word.
+Even though Skie Silvershield became much more mature, she never found it in herself to be like her father. She wanted the life of an adventurer, not the one of Baldur's Gate protector. Instead, she still participated in dangerous missions. Skie helped the Flaming Fist sometimes, but only because she wanted to aid her father, who wasn't getting any younger.
+Finally, she started her own business, a shop inspired by the Adventurer's Mart called Skie's Emporium, where she was selling all the magical trinkets she found on her adventures.
+Skie never forgot about her adventures with the Child of Bhaal. Every now and then she sat and smiled to herself, thinking about every single stupid thing they did together.~
+@86 = ~Adding crossmod banter between Fade and Skie~
+@87 = ~Adding crossmod banter between Foundling and Skie~
+@88 = ~Adding crossmod banter between Petsy and Skie~
+@89 = ~Adding crossmod banter between Quayle and Skie~
+@90 = ~Adding crossmod banter between Varshoon and Skie~
+@91 = ~Adding crossmod banter between Will and Skie~
+@92 = ~Adding crossmod banter between Yvette and Skie~
+@93 = ~Adding crossmod banter between Verr'Sza and Skie~
+@94 = ~Adding crossmod banter between Xan and Skie~
+@95 = ~Adding crossmod banter between Coran and Skie~
+@96 = ~Adding crossmod banter between Branwen and Skie~
+@97 = ~Adding crossmod banter between Tiax and Skie~
+@98 = ~Adding crossmod banter between Adrian and Skie~
+@99 = ~Adding crossmod banter between Isra and Skie~
+@100 = ~Adding crossmod banter between Ninde and Skie~
+@101 = ~Sir Ajantis for BGII detected. Installing Ajantis interjections for Skie quest...~
+@102 = ~Adding crossmod banter between Sir Ajantis and Skie~
+
+@130 = ~Studded Leather Armor~
+@131 = ~Skie's Jacket~
+@132 = ~This magical jacket was commissioned by Skie Silvershield, and it fits only her figure. It's been enchanted with an unusual spell that not only helps her to sneak when no one is looking but also grants her significant protection.
+
+Whenever you try to touch this armor, Skie makes sure your fingers aren't greasy, as—and this is a quote—she doesn't want anyone to think she's fat and has been eating any greasy food.
+
+STATISTICS:
+
+Equipped abilities:
+– Move Silently: +5%
+– When Skie is hit, there is a 10% chance the Reflected Image spell will be cast on her
+
+Armor Class: 6 (4 vs. slashing, 5 vs. piercing, and missile)
+Requires:
+6 Strength
+
+Weight: 8~
+
+
+//SHOP COMPONENT
+
+@200 = ~Skie: The Cost of One Girl's Soul - Add brand new SoD-oriented items to BG2~
+@201 = ~Merchant~
+@202 = ~Private Goldbuckler's Bracers~
+@203 = ~These bracers are made of the finest black leather. Not only do they provide great protection, but—more importantly—are quite stylish. If there's anything certain about this world, it's that these fabulous bracers will never go out of fashion.
+
+Rumor has it that they used to belong to Skie Silvershield (aka Goldbuckler) who wore them when she entered the ranks of the Flaming Fist.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: 6
+– Luck: +1
+– THAC0: +1
+
+Weight: 3
+~
+
+@204 = ~Bloodbark Cloak~
+@205 = ~According to rumors, this magic cloak was created by a group of arcane specialists who joined Caelar Argent's crusade. When marching through the Bloodbark Grove, they came across an unusual plant and managed to extract its oil. Later, they found a way to use it to improve cloaks. Thanks to the procedure, the cloak not only has protective properties but also improves the wearer's health.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Hit Points: +8
+
+Weight: 3
+~
+
+@206 = ~Hephernaan's Scratch~
+@207 = ~Hephernaan's Scratch is a deadly dagger created as praise for the dark, diabolical priest who manipulated Caelar Argent in order to aid his true master. It can deal greater damage than most blades of its size. It is said that the blade can be just as sharp as Hephernaan's tongue, and just as poisonous. The dagger can also grant its user magical knowledge on all kinds of traps and snares. This weapon should be ideal for all dark minds eager to lead their foes into deadly traps that cause fatal wounds.
+
+STATISTICS:
+
+Equipped abilities:
+– Set Traps: +30%
+
+Combat abilities:
+– 50% chance per hit of poisoning the target, who then suffers 1 poison damage every round for 4 rounds (Save vs. Death at -2 negates)
+
+THAC0: +3
+Damage: 1d6+3 (piercing)
+Speed Factor: 1
+Proficiency Type: Dagger
+Type: One-handed
+Requires:
+3 Strength
+
+Weight: 1
+~
+
+@208 = ~Entar's Grief~
+@209 = ~This flail is believed to manifest all the raging grief felt by Entar Silvershield after he found out about his daughter's death. It can call upon the darkest feelings and use them against those who stand in the wielder's way.
+
+STATISTICS:
+
+Equipped abilities:
+– Saving Throw vs. Death: +3
+– Saving Throw vs. Spells: +3
+
+Combat abilities:
+– 10% chance per hit of granting the wielder +1 Strength for 2 rounds (bonus may stack)
+
+THAC0: +3
+Damage: 1d6+3 (crushing)
+Speed Factor: 5
+Proficiency Type: Flail/Morning Star
+Type: One-handed
+Requires:
+13 Strength
+
+Weight: 12
+~
+
+@210 = ~Duke Jannath's Spare Robe~
+@211 = ~The life of a Grand Duke can be arduous, and no one knows it better than Liia Jannath. Not only does she have to make difficult decisions but also be ready for all kinds of trouble. Rumor has it that Duke Jannath always keeps a spare robe at hand, in case she needs additional protection. This one was used by her on many occasions, but it was stolen when she ordered it cleaned.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3
+– Lore: +15
+– Can memorize one extra spell of levels 1-4
+
+Weight: 6
+~
+
+@212 = ~Argent Scimitar~
+@213 = ~Legend has it that this scimitar is the Argent family blade, passed down from generation to generation. However, the most famous of the Argents did not use it during her crusade. Still, the blade somehow seems to match her personality and aura.
+
+The blade burns with strong fire and nothing seems to be able to extinguish it.
+
+STATISTICS:
+
+Equipped abilities:
+– Charisma: +2
+– Fire Resistance: +50%
+
+Combat abilities:
+– Strikes as a +5 weapon
+
+THAC0: +3
+Damage: 1d8+3, +1 fire
+Damage type: Slashing
+Speed Factor: 4
+Proficiency Type: Scimitar/Wakizashi/Ninjato
+Type: One-handed
+Requires:
+10 Strength
+
+Weight: 3
+~
+
+@214 = ~Irenicus's Hood~
+@215 = ~This is the hood Irenicus used when he spied on <CHARNAME> and Caelar Argent during the crusade's march. It is made of fine material and clearly has some magic spells on it.
+
+STATISTICS:
+
+Equipped abilities:
+– Protection from 1st-level spells
+
+Weight: 2
+~
+
+@216 = ~Studded Leather Armor~
+@217 = ~Crusade's Distant Ally~
+@218 = ~This studded leather armor is very warm and looks as if it was made from the skin of an unusual beast. It's black and white, with attached fur and well-made belts. It's also very soft.
+
+The armor may provide great protection from unpredictable weather. It was brought to the Sword Coast from the distant North by one of Caelar's allies.
+
+STATISTICS:
+
+Equipped abilities:
+– Constitution: +1
+– Cold Resistance: +35%
+– Saving Throw vs. Spells: +2
+
+Armor Class: 4 (2 vs. slashing, 3 vs. piercing and missile)
+
+Requires:
+6 Strength
+
+Weight: 8
+~
+
+//NEW
+
+@220 = ~Skie: The Cost of One Girl's Soul - Add Player-Initiated Dialogue (PID) for Skie~
+@221 = ~Skie: The Cost of One Girl's Soul - The Return of Eddard Silvershield (quest & a joinable NPC)~
+@222 = ~Skie: The Cost of One Girl's Soul - Add Player-Initiated Dialogue (PID) for Eddard~

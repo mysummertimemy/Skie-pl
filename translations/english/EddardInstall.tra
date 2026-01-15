@@ -1,0 +1,101 @@
+@5001 = ~Vully~
+@5002 = ~Shady Character~
+@5003 = ~Seller~
+@5004 = ~Buyer~
+@5005 = ~Puppy~
+@5006 = ~Eddard~
+@5007 = ~When asked about his past, EDDARD says you already met his family: Skie and their parents, Entar and Brilla. He was trained to become a responsible man, ready for all kinds of quests and challenges. His father hired the best swordsmen to teach him how to fight, while his mother's friend taught him the basics of magic. 
+Even though he was taught to be all these things—a leader, a scholar, a fighter, a diplomat —Eddard also wanted to spend time with his sister, Skie. But their relationship wasn't easy. Eddard's education was focused on leadership, while Skie was expected to be "the good daughter", which clearly affected their bond.~
+@5008 = ~This is not going well!~ [L#2EDR01]
+@5009 = ~Good.~ [L#2EDR02]
+@5010 = ~Are you sure that was a good idea?~ [L#2EDR03]
+@5011 = ~That's enough!~ [L#2EDR04]
+@5012 = ~I'll try!~ [L#2EDR05]
+@5013 = ~(Yawns)~ [L#2EDR06]
+@5014 = ~For the Silvershields!~ [L#2EDR07]
+@5015 = ~Agh!~ [L#2EDR08]
+@5016 = ~No... This time... it may be... for real...~ [L#2EDR09]
+
+@5018 = ~What a variety of people...~ [L#2EDR10]
+@5019 = ~Ah, we're doing something already?~ [L#2EDR11]
+@5020 = ~You need me, yes? I suppose I can help.~ [L#2EDR12]
+@5021 = ~I think I may need a bath...~ [L#2EDR13]
+@5022 = ~Oh? You need something?~ [L#2EDR14]
+@5023 = ~I'm wondering how Skie would handle it...~ [L#2EDR15]
+@5024 = ~Right. It sounds... reasonable.~ [L#2EDR16]
+@5025 = ~I warn you, I may need a backrub afterward! Heh.~ [L#2EDR17]
+@5026 = ~No one dares to tell my father about this!~ [L#2EDR18]
+@5027 = ~Damn it!~ [L#2EDR19]
+@5028 = ~Such a loss...~ [L#2EDR20]
+@5029 = ~Jackly~
+@5030 = ~Note~
+@5031 = ~This note mentions a transaction that is supposed to take place somewhere in Athkatla. The precise location remains undisclosed except for a vague comment about some "platforms". The object of this trade is a young male, well-educated, "found" on the Sword Coast. No name is provided.
+
+More details may be needed in order to find the exact place of the transaction.
+
+STATISTICS:
+
+Weight: 1~
+@5032 = ~Eddard's Body~
+@5033 = ~Eddard was captured by Bodhi and infected with vampirism, forcing you to slay him. There may be some way to revive him, though you don't know what it would be.
+
+STATISTICS:
+
+Weight: 135~
+@5034 = ~Leather Armor~
+@5035 = ~Ursa's Fur Armor~
+@5036 = ~This armor was made from the fur of Ursa the cave bear, protector of the Xvart village. Its quality is superior to that of a regular set of leather armor. It is believed to grant good health to those who wear it, while not preventing spellcasters like bards from casting their spells.
+  
+STATISTICS:
+
+Equipped Abilities:
+–  Constitution: +2
+–  Spellcasting is not disabled
+
+Armor Class: 8 (10 vs. piercing and missile), +2 vs. bears, dogs, and wolves
+Requires:
+ 4 Strength
+
+Weight: 15~
+@5037 = ~"Eight Cursed Gems" by Homleen Fallhood~
+@5038 = ~This horror romance was written by Homleen Fallhood, a well-known and praised writer. It tells the story of eight friends, all hiding their secrets from each other. Every one of these secrets links them to the death of an elderly lady who used to live in an old cottage, just twenty minutes from the town of Braghlinn. Will revealing their secrets save them...? Or will it doom them and those they care about the most?
+  
+STATISTICS:
+
+Weight: 2~
+@5039 = ~Broken Handband~
+@5040 = ~This is a memento Eddard Silvershield took from his home and the only thing the slavers didn't take away from him. Even though it's broken, it still reminds its owner of his home and family.
+
+When you ask Eddard if he'd like to repair it, he says it's not necessary. He rarely used to wear it, but took it with him because he felt better having part of his old life with him. This small item never lets him forget where he comes from.
+  
+STATISTICS:
+
+Charge abilities:
+- May cast Remove Fear once per day: 
+The caster instills courage in the spell's recipients, raising their morale to its highest. The recipients' morale will gradually reset to normal as the duration runs out. If the recipients are affected by magical fear, this is negated. This version of the spell is centered on the handband's owner, Eddard.
+
+Weight: 0~
+@5041 = ~Talk to Master Barkshield~
+@5042 = ~Master Barkshield~
+@5043 = ~This is the puppy Eddard Silvershield saved in Saradush. He took the dog with him as he was starving on the streets, and his mother was already gone. Eddard named him Master Barkshield. 
+
+The dog is excellent at doing what the handband he destroyed used to do: making all the fear go away. However, he weighs a little more than the broken handband.
+
+Eddard treats this dog as a very good friend.
+  
+STATISTICS:
+
+Charge abilities:
+- May cast Remove Fear once per day: 
+The caster instills courage in the spell's recipients, raising their morale to its highest. The recipients' morale will gradually reset to normal as the duration runs out. If the recipients are affected by magical fear, this is negated. This version of the spell is centered on the dog's human friend: Eddard.
+
+Weight: 3~
+@5044 = ~Adventures with the Child of Bhaal gave Eddard Silvershield a new purpose. They taught him how to be a strong person and brought back the confidence that slavers had taken away from him. He returned to the city of Baldur's Gate, to his family, who welcomed him with open arms. His father was especially happy to see him. Having heard the tales of <CHARNAME> and Eddard's adventures, Entar Silvershield never even tried to undermine their work. Instead, he planned his next move with his son. Eddard also became the Hero of Baldur's Gate, but he found his own ways to support the city he was born in. Still, that didn't stop him from leaving the estate every now and then... on an adventure, of course, to see the world and again taste the kind of life he had while he worked with <CHARNAME>.~
+@5045 = ~Adventures with the Child of Bhaal gave Eddard Silvershield a new purpose. They taught him how to be a strong person and brought back the confidence that slavers had taken away from him. He returned to the city of Baldur's Gate, to his family, who welcomed him with open arms. They also welcomed Master Barkshield, of course. Eddard's father was especially happy to see his son back. Having heard the tales of <CHARNAME> and Eddard's adventures, Entar Silvershield never even tried to undermine their work. Instead, he planned his next move with his son. Eddard also became the Hero of Baldur's Gate, but he found his own ways to support the city he was born in. Still, that didn't stop him from leaving the estate every now and then... on an adventure, of course, with Master Barkshield as his trusted companion, to see the world and taste that kind of life he had while he worked with <CHARNAME>.~
+@5046 = ~Adventures with the Child of Bhaal gave Eddard Silvershield a new purpose. They taught him how to be a strong person and brought back the confidence that slavers had taken away from him. He returned to the city of Baldur's Gate together with his beloved <CHARNAME>... His family gladly welcomed both of them. His father was especially happy to see his son back and accepted who he fell in love with. Having heard the tales of <CHARNAME> and Eddard's adventures, Entar Silvershield never even tried to undermine their work. Instead, he planned his next move with his son. Eddard also became the Hero of Baldur's Gate, but he found his own ways to support the city he was born in. Still, that didn't stop him from leaving the estate every now and then... with <CHARNAME>, of course. They set off on all kinds of adventures and fought all kinds of monsters. Some tales mention their fight with a powerful Brass Dragon Lord and his army! They won and yet again showed the people of Toril that together, they can fight every creature... and win.~
+@5047 = ~Adventures with the Child of Bhaal gave Eddard Silvershield a new purpose. They taught him how to be a strong person and brought back the confidence that slavers had taken away from him. He returned to the city of Baldur's Gate together with his beloved <CHARNAME> and Master Barkshield... His family gladly welcomed all of them. His father was especially happy to see his son back and accepted who he fell in love with. Having heard the tales of <CHARNAME> and Eddard's adventures, Entar Silvershield never even tried to undermine their work. Instead, he planned his next move with his son. Eddard also became the Hero of Baldur's Gate, but he found his own ways to support the city he was born in. Still, that didn't stop him from leaving the estate every now and then... with <CHARNAME> and Master Barkshield, of course. They set off on all kinds of adventures and fought all kinds of monsters. Some tales mention their fight with a powerful Brass Dragon Lord and his army! They won and yet again showed the people of Toril that together, they can fight every creature... and win.~
+@5048 = ~The Child of Bhaal broke Eddard's heart by choosing <PRO_HISHER> heritage over their relationship without even breaking up with Eddard first. Even though Eddard did his best to forgive <CHARNAME>, he could not accept this situation. He became bitter and rarely stayed at the Silvershield estate. He set off on... adventures that would keep him busy. Tales say he has thrown himself into less meaningful "relationships" that were nothing else but causal sex, sometimes with people he barely knew. That was yet another way of trying to forget, but... it's not easy when you truly love someone who's gone.~
+
+
+
+
